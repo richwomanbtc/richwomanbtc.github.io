@@ -24,8 +24,11 @@ jobs:
         with:
           version: 1.4.0
 
+      - name: Regenerate poetry.lock
+        run: poetry lock
+
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --no-dev # 開発依存関係を除外
 
       - name: Update research data
         run: poetry run python scripts/fetch_researchmap.py
@@ -34,6 +37,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _auto_contents/ _data/
+          git add _auto_contents/ _data/ poetry.lock
           git commit -m "Update research data (automated)" || echo "No changes to commit"
           git push
