@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kenji Kubo | Researcher Page</title>
     
     <!-- Favicon設定 -->
@@ -126,24 +126,57 @@
         
         /* レスポンシブデザイン用 */
         @media (max-width: 768px) {
-            /* メインレイアウト調整 */
+            body {
+                overflow-x: hidden;
+            }
+            
+            /* コンテナの幅を調整 */
             .container {
-                padding: 0 15px;
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
             }
             
+            /* メインレイアウトの修正 */
             main.container {
-                flex-direction: column;
+                display: block;
+                padding: 0;
             }
             
+            /* サイドバーの修正 */
             .sidebar {
                 width: 100%;
-                position: relative;
-                margin-bottom: 20px;
+                position: static;
+                margin: 0 0 20px 0;
+                padding: 10px;
             }
             
+            .sidebar.active {
+                display: block;
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            /* コンテンツエリアの修正 */
             .content {
                 width: 100%;
                 margin-left: 0;
+                padding: 10px;
+            }
+            
+            /* セクションの修正 */
+            section {
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+            
+            /* プロフィール写真の修正 */
+            .profile-image img {
+                max-width: 150px;
+                margin: 0 auto;
+                display: block;
             }
             
             /* ヘッダー調整 */
@@ -394,14 +427,31 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        // ハンバーガーメニューの動作
+        // ハンバーガーメニューの改善
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const sidebar = document.querySelector('.sidebar');
             
             if (menuToggle && sidebar) {
-                menuToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
+                // 初期状態ではサイドバーを非表示（スマホのみ）
+                if (window.innerWidth <= 768) {
+                    sidebar.style.display = 'none';
+                }
+                
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (sidebar.style.display === 'none' || !sidebar.classList.contains('active')) {
+                        sidebar.style.display = 'block';
+                        sidebar.classList.add('active');
+                    } else {
+                        sidebar.classList.remove('active');
+                        // アニメーション用に少し遅らせて非表示
+                        setTimeout(function() {
+                            if (window.innerWidth <= 768) {
+                                sidebar.style.display = 'none';
+                            }
+                        }, 300);
+                    }
                 });
                 
                 // メニュー項目クリック時に自動的に閉じる
@@ -410,8 +460,22 @@
                     item.addEventListener('click', function() {
                         if (window.innerWidth <= 768) {
                             sidebar.classList.remove('active');
+                            // アニメーション用に少し遅らせて非表示
+                            setTimeout(function() {
+                                sidebar.style.display = 'none';
+                            }, 300);
                         }
                     });
+                });
+                
+                // ウィンドウサイズ変更時の処理
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        sidebar.style.display = 'block';
+                        sidebar.classList.remove('active');
+                    } else if (!sidebar.classList.contains('active')) {
+                        sidebar.style.display = 'none';
+                    }
                 });
             }
         });
