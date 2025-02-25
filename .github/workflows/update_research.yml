@@ -1,44 +1,39 @@
-name: 研究業績更新
+name: Update Research Data
 
 on:
   schedule:
-    - cron: "0 0 * * *" # 毎日午前0時（UTC）に実行
-  workflow_dispatch: # 手動実行用
+    - cron: "0 0 * * *" # 毎日午前0時に実行
+  workflow_dispatch: # 手動実行トリガー
 
 jobs:
-  update-research-data:
+  update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # リポジトリへのwrite権限を明示的に付与
     steps:
-      - name: リポジトリをチェックアウト
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Python環境セットアップ
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.9"
 
-      - name: Poetry インストール
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.4.0
 
-      - name: 依存関係インストール
-        run: |
-          poetry install
+      - name: Install dependencies
+        run: poetry install
 
-      - name: ResearchMapデータ取得
-        run: |
-          poetry run python scripts/fetch_researchmap.py
+      - name: Update research data
+        run: poetry run python scripts/fetch_researchmap.py
 
-      - name: 変更を確認してコミット
+      - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _data/research_data.json _auto_contents/
-          git diff --staged --quiet || git commit -m "研究データを自動更新 $(date +'%Y-%m-%d')"
-
-      - name: 変更をプッシュ
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          git add _auto_contents/ _data/
+          git commit -m "Update research data (automated)" || echo "No changes to commit"
+          git push
