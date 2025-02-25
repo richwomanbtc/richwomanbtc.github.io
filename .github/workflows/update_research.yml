@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # リポジトリへのwrite権限を明示的に付与
+      pages: write # Pagesへのデプロイ権限
+      id-token: write # OIDC認証用
+
+    # 環境変数の設定
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -40,3 +48,18 @@ jobs:
           git add _auto_contents/ _data/ poetry.lock
           git commit -m "Update research data (automated)" || echo "No changes to commit"
           git push
+
+      # GitHub Pagesの設定
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # アーティファクトのアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "." # リポジトリのルートディレクトリ
+
+      # GitHub Pagesへのデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
