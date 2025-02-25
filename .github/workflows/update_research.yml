@@ -43,19 +43,16 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          # 現在のブランチ（main）の最新の変更を記録
-          git add _auto_contents/ _data/ poetry.lock || true
-
-          # 更新されたファイルの内容を一時保存
-          mkdir -p /tmp/updated_files
-          cp -r _auto_contents /tmp/updated_files/ || true
-          cp -r _data /tmp/updated_files/ || true
-          cp poetry.lock /tmp/updated_files/ || true
+          # サイト全体を一時保存（すべてのファイルを含む）
+          mkdir -p /tmp/site_content
+          cp -r * /tmp/site_content/ || true
+          cp -r .* /tmp/site_content/ 2>/dev/null || true
 
           # pageブランチが存在するか確認し、なければ作成
           git fetch origin
           if ! git ls-remote --heads origin page | grep page; then
             git checkout -b page
+            git add .
             git commit -m "Initial deployment to page branch"
             git push -u origin page
           else
@@ -64,11 +61,13 @@ jobs:
             git fetch origin page
             git reset --hard origin/page
             
-            # メインブランチで更新されたデータを適用
-            cp -r /tmp/updated_files/* ./ || true
+            # 保存したサイト全体を適用（すべてのファイルを更新）
+            rm -rf * .*
+            cp -r /tmp/site_content/* . || true
+            cp -r /tmp/site_content/.* . 2>/dev/null || true
             
             # 変更を確認してコミット
             git add -A
-            git diff --staged --quiet || git commit -m "Deploy updated research data (automated)"
+            git diff --staged --quiet || git commit -m "Deploy updated site content (automated)"
             git push origin HEAD:page
           fi
