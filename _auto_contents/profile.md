@@ -23,3 +23,6 @@ auto_content: true
 - **Mercari Inc.** R4D, Researcher (2018-09 - Present)
 - **Daiwa Securities Co., Ltd.** (2017-04 - 2018-08)
 
+## Education
+
+

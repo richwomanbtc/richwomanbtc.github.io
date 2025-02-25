@@ -146,6 +146,11 @@ async function loadMarkdownFromSource(element, sourcePath) {
 
     // マークダウンをHTMLに変換
     element.innerHTML = marked.parse(content);
+
+    // プロフィール写真の挿入（プロフィールセクションの場合のみ）
+    if (element.id === "profile-content") {
+      insertProfileImage();
+    }
   } catch (error) {
     console.error(`${absolutePath}読み込みエラー:`, error);
     // エラーの場合もセクションを非表示にする
@@ -186,4 +191,29 @@ function loadMarkdownContent() {
         element.innerHTML = "<p>コンテンツの読み込みに失敗しました。</p>";
       });
   });
+}
+
+// プロフィール写真を挿入する関数
+function insertProfileImage() {
+  const profileContent = document.getElementById("profile-content");
+  const firstHeading = profileContent.querySelector("h2"); // CareerまたはEducationの見出し
+
+  if (firstHeading) {
+    const imageHTML = `
+      <div class="profile-with-image">
+        <div class="profile-info">
+          ${profileContent.innerHTML.slice(
+            0,
+            profileContent.innerHTML.indexOf("<h2")
+          )}
+        </div>
+        <div class="profile-image">
+          <img src="assets/images/profile.jpg" alt="Kenji Kubo" />
+        </div>
+        <div class="clear"></div>
+      </div>
+      ${profileContent.innerHTML.slice(profileContent.innerHTML.indexOf("<h2"))}
+    `;
+    profileContent.innerHTML = imageHTML;
+  }
 }
