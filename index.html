@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kenji Kubo | Researcher Page</title>
     
     <!-- Favicon設定 -->
@@ -126,6 +126,98 @@
         
         /* レスポンシブデザイン用 */
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            /* コンテナの幅を調整 */
+            .container {
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            
+            /* メインレイアウトの修正 */
+            main.container {
+                display: block;
+                padding: 0;
+            }
+            
+            /* サイドバーの修正 */
+            .sidebar {
+                width: 100%;
+                position: static;
+                margin: 0 0 20px 0;
+                padding: 10px;
+            }
+            
+            .sidebar.active {
+                display: block;
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            /* コンテンツエリアの修正 */
+            .content {
+                width: 100%;
+                margin-left: 0;
+                padding: 10px;
+            }
+            
+            /* セクションの修正 */
+            section {
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+            
+            /* プロフィール写真の修正 */
+            .profile-image img {
+                max-width: 150px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            /* ヘッダー調整 */
+            header {
+                padding: 15px 0;
+            }
+            
+            header h1 {
+                font-size: 24px;
+            }
+            
+            /* セクション調整 */
+            section {
+                padding: 15px;
+            }
+            
+            /* ナビゲーションをモバイルフレンドリーに */
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .sidebar li {
+                margin: 0;
+            }
+            
+            .sidebar a {
+                padding: 8px 12px;
+                font-size: 14px;
+                border-radius: 20px;
+                background-color: #f5f5f5;
+            }
+            
+            .sidebar a.active {
+                background-color: #007bff;
+                color: white;
+            }
+            
+            /* プロフィール情報調整 */
             .profile-info, .profile-image {
                 float: none;
                 width: 100%;
@@ -134,6 +226,45 @@
             
             .profile-image {
                 margin: 20px 0;
+            }
+            
+            .profile-image img {
+                max-width: 150px;
+            }
+            
+            /* サイズ調整 */
+            h2 {
+                font-size: 22px;
+            }
+            
+            p, li {
+                font-size: 15px;
+            }
+            
+            /* ソーシャルリンク調整 */
+            .social-links {
+                justify-content: center;
+                margin: 15px 0;
+            }
+        }
+        
+        /* さらに小さい画面用 */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+            
+            .sidebar a {
+                padding: 6px 10px;
+                font-size: 13px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .profile-image img {
+                max-width: 120px;
             }
         }
         
@@ -146,12 +277,47 @@
         #profile h2 {
             margin-top: 20px;
         }
+        
+        /* ヘッダーレイアウト調整 */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* ハンバーガーメニュー */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .sidebar {
+                display: none;
+                margin-top: 10px;
+            }
+            
+            .sidebar.active {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container header-content">
             <h1>Kenji Kubo</h1>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -260,5 +426,59 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // ハンバーガーメニューの改善
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (menuToggle && sidebar) {
+                // 初期状態ではサイドバーを非表示（スマホのみ）
+                if (window.innerWidth <= 768) {
+                    sidebar.style.display = 'none';
+                }
+                
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (sidebar.style.display === 'none' || !sidebar.classList.contains('active')) {
+                        sidebar.style.display = 'block';
+                        sidebar.classList.add('active');
+                    } else {
+                        sidebar.classList.remove('active');
+                        // アニメーション用に少し遅らせて非表示
+                        setTimeout(function() {
+                            if (window.innerWidth <= 768) {
+                                sidebar.style.display = 'none';
+                            }
+                        }, 300);
+                    }
+                });
+                
+                // メニュー項目クリック時に自動的に閉じる
+                const menuItems = sidebar.querySelectorAll('a');
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            sidebar.classList.remove('active');
+                            // アニメーション用に少し遅らせて非表示
+                            setTimeout(function() {
+                                sidebar.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+                
+                // ウィンドウサイズ変更時の処理
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        sidebar.style.display = 'block';
+                        sidebar.classList.remove('active');
+                    } else if (!sidebar.classList.contains('active')) {
+                        sidebar.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 
