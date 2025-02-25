@@ -1,5 +1,5 @@
 ---
-title: 研究内容
+title: Research
 layout: page
 manual_content: true
 ---

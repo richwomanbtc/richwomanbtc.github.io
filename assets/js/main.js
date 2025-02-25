@@ -63,8 +63,11 @@ function updateActiveSection() {
 
 async function loadMarkdownContents() {
   try {
+    console.log("Loading markdown contents...");
+
     // メタデータの読み込み
     const metadataResponse = await fetch("_auto_contents/metadata.yml");
+    console.log("Metadata response:", metadataResponse);
     if (metadataResponse.ok) {
       const metadata = await metadataResponse.text();
 
@@ -95,7 +98,11 @@ async function loadMarkdownContents() {
 
 async function loadMarkdownFromSource(element, sourcePath) {
   try {
-    const response = await fetch(sourcePath);
+    // パスの先頭にスラッシュを追加して絶対パスに変換
+    const absolutePath = sourcePath.startsWith("/")
+      ? sourcePath
+      : `/${sourcePath}`;
+    const response = await fetch(absolutePath);
     if (!response.ok) {
       // ファイルが存在しない場合はセクションを非表示にする
       const sectionElement = element.closest("section");
@@ -140,7 +147,7 @@ async function loadMarkdownFromSource(element, sourcePath) {
     // マークダウンをHTMLに変換
     element.innerHTML = marked.parse(content);
   } catch (error) {
-    console.error(`${sourcePath}読み込みエラー:`, error);
+    console.error(`${absolutePath}読み込みエラー:`, error);
     // エラーの場合もセクションを非表示にする
     const sectionElement = element.closest("section");
     if (sectionElement) {
