@@ -40,7 +40,9 @@ def save_json_data(data):
         os.makedirs(DATA_DIR)
 
     # 最終更新日時を追加
-    data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.utcnow()  # UTCで現在時刻を取得
+    update_time = now.strftime("%Y-%m-%d %H:%M")  # フォーマット
+    data["last_updated"] = f"{update_time} (UTC)"  # UTC明記
 
     file_path = os.path.join(DATA_DIR, "research_data.json")
     with open(file_path, "w", encoding="utf-8") as f:
