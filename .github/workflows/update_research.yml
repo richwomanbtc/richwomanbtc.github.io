@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 0 * * *" # 毎日午前0時に実行
   workflow_dispatch: # 手動実行トリガー
+  push:
+    branches:
+      - main # mainブランチにプッシュされた時に実行
 
 jobs:
   update:
