@@ -1,0 +1,1874 @@
+{
+  "@context": "https://api.researchmap.jp/researcher.jsonld",
+  "@id": "https://api.researchmap.jp/kenjikun?format=json",
+  "@type": "researchers",
+  "rm:user_id": "B000361821",
+  "rm:creator_id": "B000361821",
+  "rm:creator_type": "myself",
+  "rm:created": "2019-06-26T05:41:49Z",
+  "rm:modifier_id": "B000361821",
+  "rm:modifier_type": "myself",
+  "rm:modified": "2025-02-25T14:15:08Z",
+  "permalink": "kenjikun",
+  "family_name": {
+    "ja": "久保",
+    "en": "Kubo"
+  },
+  "given_name": {
+    "ja": "健治",
+    "en": "Kenji"
+  },
+  "display_name_kana": "disclosed",
+  "display_nickname": "disclosed",
+  "image": "https://researchmap.jp/kenjikun/avatar.JPG",
+  "display_image": "disclosed",
+  "display_contact_point": "disclosed",
+  "degrees": [
+    {
+      "degree": {
+        "ja": "博士(理学)",
+        "en": "Doctor of Science"
+      },
+      "degree_institution": {
+        "ja": "大阪大学",
+        "en": "Osaka University"
+      },
+      "degree_date": "2022-09",
+      "display_degree": "disclosed",
+      "rm:institution_code": "0292000000"
+    }
+  ],
+  "display_profile": "disclosed",
+  "display_url": "disclosed",
+  "identifiers": {
+    "j_global_id": [
+      "201901013306081250"
+    ]
+  },
+  "rm:erad_id_verified": false,
+  "rm:orc_id_verified": true,
+  "display_erad_id": "closed",
+  "display_orc_id": "closed",
+  "display_researcher_id": "disclosed",
+  "display_j_global_id": "disclosed",
+  "see_also": [
+    {
+      "label": "j_global",
+      "@id": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=201901013306081250"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/research_areas",
+      "@type": "research_areas",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 3,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_areas/47509516",
+          "@type": "research_areas",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_areas",
+          "rm:id": "47509516",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:25:29Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:25:29Z",
+          "discipline_number": "A289",
+          "item_number": "A60020",
+          "discipline": {
+            "ja": "情報通信",
+            "en": "Informatics"
+          },
+          "research_field": {
+            "ja": "数理情報学",
+            "en": "Mathematical informatics"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_areas/47509514",
+          "@type": "research_areas",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_areas",
+          "rm:id": "47509514",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:25:09Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:25:09Z",
+          "discipline_number": "A900",
+          "item_number": "A07060",
+          "discipline": {
+            "ja": "人文・社会",
+            "en": "Humanities & social sciences"
+          },
+          "research_field": {
+            "ja": "金融、ファイナンス",
+            "en": "Money and finance"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_areas/25857762",
+          "@type": "research_areas",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_areas",
+          "rm:id": "25857762",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2020-04-03T02:06:30Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2020-04-03T02:06:30Z",
+          "discipline_number": "A1000",
+          "item_number": "A13010",
+          "discipline": {
+            "ja": "自然科学一般",
+            "en": "Natural sciences"
+          },
+          "research_field": {
+            "ja": "数理物理、物性基礎",
+            "en": "Mathematical physics and basic theory"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/research_experience",
+      "@type": "research_experience",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 4,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_experience/49241991",
+          "@type": "research_experience",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_experience",
+          "rm:id": "49241991",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2025-02-25T13:58:23Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-02-25T14:15:08Z",
+          "from_date": "2025-02",
+          "to_date": "9999",
+          "rm:institution_code": "9999999999",
+          "affiliation": {
+            "ja": "株式会社松尾研究所",
+            "en": "Matsuo Institute, Inc."
+          },
+          "section": {
+            "ja": "経営戦略本部"
+          },
+          "job": {
+            "en": "Research Engineer"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_experience/47509601",
+          "@type": "research_experience",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_experience",
+          "rm:id": "47509601",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:35:57Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-02-25T13:59:08Z",
+          "from_date": "2018-09",
+          "to_date": "9999",
+          "rm:institution_code": "9999999999",
+          "affiliation": {
+            "ja": "株式会社メルカリ",
+            "en": "Mercari, Inc."
+          },
+          "section": {
+            "ja": "R4D"
+          },
+          "job": {
+            "en": "Researcher"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_experience/47509614",
+          "@type": "research_experience",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_experience",
+          "rm:id": "47509614",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:41:50Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-02-25T13:57:34Z",
+          "from_date": "2023-04",
+          "to_date": "2025-02",
+          "rm:institution_code": "9999999999",
+          "affiliation": {
+            "ja": "KKT Goods Wholesalers L.L.C."
+          },
+          "job": {
+            "ja": "Quantitative trader"
+          },
+          "address_country": "ARE"
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_experience/47509600",
+          "@type": "research_experience",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_experience",
+          "rm:id": "47509600",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:35:12Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-02-25T14:14:37Z",
+          "from_date": "2017-04",
+          "to_date": "2018-08",
+          "rm:institution_code": "9999999999",
+          "affiliation": {
+            "ja": "大和証券株式会社",
+            "en": "Daiwa Securities, Inc."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/education",
+      "@type": "education",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 3,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/education/47509608",
+          "@type": "education",
+          "@reverse": "https://api.researchmap.jp/kenjikun/education",
+          "rm:id": "47509608",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:39:51Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:40:08Z",
+          "from_date": "2019-10",
+          "to_date": "2022-09",
+          "rm:institution_code": "0292505018",
+          "affiliation": {
+            "ja": "大阪大学",
+            "en": "Osaka University"
+          },
+          "department": {
+            "ja": "大学院基礎工学研究科",
+            "en": "Graduate School of Engineering Science"
+          },
+          "course": {
+            "ja": "システム創成専攻 電子光科学領域",
+            "en": "Department of Systems Innovation Division of Advanced Electronics and Optical Science"
+          },
+          "note": {
+            "ja": "博士(理学)"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/education/47509606",
+          "@type": "education",
+          "@reverse": "https://api.researchmap.jp/kenjikun/education",
+          "rm:id": "47509606",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:39:00Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:40:24Z",
+          "from_date": "2013-04",
+          "to_date": "2015-03",
+          "rm:institution_code": "0280065004",
+          "affiliation": {
+            "ja": "京都大学",
+            "en": "Kyoto University"
+          },
+          "department": {
+            "ja": "大学院人間・環境学研究科",
+            "en": "Graduate School of Human and Environmental Studies"
+          },
+          "course": {
+            "ja": "相関環境学専攻",
+            "en": "Department of Interdisciplinary Environment"
+          },
+          "note": {
+            "ja": "修士(人間・環境学)"
+          }
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/education/47509604",
+          "@type": "education",
+          "@reverse": "https://api.researchmap.jp/kenjikun/education",
+          "rm:id": "47509604",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:38:16Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:43:20Z",
+          "from_date": "2009-04",
+          "to_date": "2013-03",
+          "rm:institution_code": "0280508001",
+          "affiliation": {
+            "ja": "京都大学",
+            "en": "Kyoto University"
+          },
+          "department": {
+            "ja": "理学部",
+            "en": "Faculty of Science"
+          },
+          "course": {
+            "ja": "理学科",
+            "en": "Faculty of Science"
+          },
+          "note": {
+            "ja": "物理学専攻"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/awards",
+      "@type": "awards",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 1,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/awards/47509596",
+          "@type": "awards",
+          "@reverse": "https://api.researchmap.jp/kenjikun/awards",
+          "rm:id": "47509596",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:30:21Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:30:21Z",
+          "award_name": {
+            "ja": "第1回量子ソフトウェア研究発表会 学生奨励賞受賞"
+          },
+          "award_date": "2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/published_papers",
+      "@type": "published_papers",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 10,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/48934407",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "48934407",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "external:ORCID",
+          "rm:creator_type": "trusted_institution",
+          "rm:created": "2025-01-15T23:24:10Z",
+          "rm:modifier_id": "external:ORCID",
+          "rm:modifier_type": "trusted_institution",
+          "rm:modified": "2025-01-21T00:30:36Z",
+          "paper_title": {
+            "en": "Portfolio optimization using deep learning with risk aversion utility function"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Kei Nakagawa"
+              }
+            ]
+          },
+          "publication_date": "2025-03",
+          "publication_name": {
+            "en": "Finance Research Letters"
+          },
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1016/j.frl.2025.106761"
+            ],
+            "orcid_put_cd": [
+              "175645694"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1016/j.frl.2025.106761",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509526",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509526",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:31:23Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:31:54Z",
+          "paper_title": {
+            "en": "Quantum tangent kernel"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Norihito Shirai"
+              },
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Kosuke Mitarai"
+              },
+              {
+                "name": "Keisuke Fujii"
+              }
+            ]
+          },
+          "description": {
+            "en": "<jats:p>The quantum kernel method is one of the key approaches to quantum machine learning, which has the advantage of not requiring optimization and its theoretical simplicity. By virtue of these properties, several experimental demonstrations and discussions of the potential advantages have been developed so far. However, as is the case in classical machine learning, not all quantum machine learning models could be regarded as kernel methods. In this work, we explore a quantum machine learning model with a deep parametrized quantum circuit and aim to go beyond the conventional quantum kernel method. In this case, the expressive power and performance are expected to be enhanced, while the training process might be a bottleneck because of the barren plateaus. Moreover, the high computational cost of gradient-based optimization and the large search space of the gradient-free optimization directly make the training intractable. However, we find that parameters of a deep enough quantum circuit do not move much from their initial values during training, allowing for a first-order expansion with respect to the parameters. This behavior is similar to that of the neural tangent kernel in classical machine learning, and such a quantum machine learning with deep variational quantum circuits can be described by another emergent kernel, the . We show that the proposed quantum tangent kernel has the potential to outperform the conventional quantum kernel method by performing a classification task on an ansatz-generated dataset. This work provides a different direction beyond the conventional quantum kernel method and explores the potential power of quantum machine learning with deep parametrized quantum circuits.</jats:p>\n <jats:sec>\n <jats:title/>\n <jats:supplementary-material>\n <jats:permissions>\n <jats:copyright-statement>Published by the American Physical Society</jats:copyright-statement>\n <jats:copyright-year>2024</jats:copyright-year>\n </jats:permissions>\n </jats:supplementary-material>\n </jats:sec>"
+          },
+          "publication_date": "2024-08-16",
+          "publication_name": {
+            "en": "Physical Review Research"
+          },
+          "languages": [
+            "eng"
+          ],
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1103/physrevresearch.6.033179"
+            ],
+            "issn": [
+              "2643-1564"
+            ],
+            "orcid_put_cd": [
+              "166158184"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1103/physrevresearch.6.033179",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509509",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509509",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:21:37Z",
+          "rm:modifier_id": "external:ORCID",
+          "rm:modifier_type": "trusted_institution",
+          "rm:modified": "2024-10-31T16:13:55Z",
+          "paper_title": {
+            "en": "Optimal liquidation strategy for cryptocurrency marketplaces using stochastic control"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kubo, K."
+              },
+              {
+                "name": "Nakagawa, K."
+              },
+              {
+                "name": "Mizukami, D."
+              },
+              {
+                "name": "Acharya, D."
+              }
+            ]
+          },
+          "publication_date": "2023-05",
+          "publication_name": {
+            "en": "Finance Research Letters"
+          },
+          "volume": "53",
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1016/j.frl.2023.103639"
+            ],
+            "orcid_put_cd": [
+              "166199363"
+            ],
+            "issn": [
+              "1544-6123"
+            ],
+            "scopus_id": [
+              "85146559051"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1016/j.frl.2023.103639",
+              "is_downloadable": false
+            },
+            {
+              "label": "url",
+              "@id": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85146559051&partnerID=MN8TOARS",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509508",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509508",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:21:37Z",
+          "rm:modifier_id": "external:ORCID",
+          "rm:modifier_type": "trusted_institution",
+          "rm:modified": "2024-10-31T16:13:55Z",
+          "paper_title": {
+            "en": "Pricing Multiasset Derivatives by Variational Quantum Algorithms"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kubo, K."
+              },
+              {
+                "name": "Miyamoto, K."
+              },
+              {
+                "name": "Mitarai, K."
+              },
+              {
+                "name": "Fujii, K."
+              }
+            ]
+          },
+          "publication_date": "2023",
+          "publication_name": {
+            "en": "IEEE Transactions on Quantum Engineering"
+          },
+          "volume": "4",
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1109/TQE.2023.3269525"
+            ],
+            "orcid_put_cd": [
+              "166199364"
+            ],
+            "issn": [
+              "2689-1808"
+            ],
+            "scopus_id": [
+              "85159654583"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1109/TQE.2023.3269525",
+              "is_downloadable": false
+            },
+            {
+              "label": "url",
+              "@id": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85159654583&partnerID=MN8TOARS",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509506",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509506",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:21:37Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:40:12Z",
+          "paper_title": {
+            "en": "Quantum Algorithms for Derivative Pricing with Efficient Classical-Quantum Transformations"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kenji Kubo"
+              }
+            ]
+          },
+          "publication_date": "2022-09-22",
+          "languages": [
+            "eng"
+          ],
+          "published_paper_type": "doctoral_thesis",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "orcid_put_cd": [
+              "166158292"
+            ],
+            "doi": [
+              "10.18910/89655"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.18910/89655",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509505",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509505",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:21:36Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:41:21Z",
+          "paper_title": {
+            "en": "Pricing Multi-Asset Derivatives by Finite-Difference Method on a Quantum Computer"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Koichi Miyamoto"
+              },
+              {
+                "name": "Kenji Kubo"
+              }
+            ]
+          },
+          "publisher": {
+            "en": "Institute of Electrical and Electronics Engineers ({IEEE})"
+          },
+          "publication_date": "2021-11-17",
+          "publication_name": {
+            "en": "IEEE Transactions on Quantum Engineering"
+          },
+          "volume": "3",
+          "starting_page": "1",
+          "ending_page": "25",
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1109/tqe.2021.3128643"
+            ],
+            "issn": [
+              "2689-1808"
+            ],
+            "orcid_put_cd": [
+              "123834922"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1109/tqe.2021.3128643",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/47509504",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "47509504",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:21:36Z",
+          "rm:modifier_id": "external:ORCID",
+          "rm:modifier_type": "trusted_institution",
+          "rm:modified": "2024-10-31T16:13:55Z",
+          "paper_title": {
+            "en": "Variational quantum simulations of stochastic differential equations"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kubo, K."
+              },
+              {
+                "name": "Nakagawa, Y.O."
+              },
+              {
+                "name": "Endo, S."
+              },
+              {
+                "name": "Nagayama, S."
+              }
+            ]
+          },
+          "publisher": {
+            "en": "American Physical Society ({APS})"
+          },
+          "publication_date": "2021-05-21",
+          "publication_name": {
+            "en": "Physical Review A"
+          },
+          "volume": "103",
+          "number": "5",
+          "referee": true,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1103/PhysRevA.103.052425"
+            ],
+            "orcid_put_cd": [
+              "166199368"
+            ],
+            "issn": [
+              "2469-9934",
+              "2469-9926"
+            ],
+            "scopus_id": [
+              "85106349164"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1103/PhysRevA.103.052425",
+              "is_downloadable": false
+            },
+            {
+              "label": "url",
+              "@id": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85106349164&partnerID=MN8TOARS",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/39566748",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "39566748",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "ai:assign_based_papers",
+          "rm:creator_type": "ai",
+          "rm:created": "2022-08-08T13:19:11Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:42:47Z",
+          "paper_title": {
+            "ja": "Anisotropic spin motive force in multi-layered Dirac fermion system, α-(BEDT-TTF)2I3",
+            "en": "Anisotropic spin motive force in multi-layered Dirac fermion system, α-(BEDT-TTF)2I3"
+          },
+          "authors": {
+            "ja": [
+              {
+                "name": "K. Kubo"
+              },
+              {
+                "name": "T. Morinari"
+              }
+            ],
+            "en": [
+              {
+                "name": "K Kubo"
+              },
+              {
+                "name": "T Morinari"
+              }
+            ]
+          },
+          "description": {
+            "en": "We investigate the anisotropic spin motive force in alpha-(BEDT-TTF)(2)I-3, which is a multi-layered massless Dirac fermion system under pressure. Assuming the interlayer antiferromagnetic interaction and the interlayer anisotropic ferromagnetic interaction, we numerically examine the spin ordered state of the ground state using the steepest descent method. The anisotropic interaction leads to the anisotropic spin ordered state. We calculate the spin motive force produced by the anisotropic spin texture. The result quantitatively agrees with the experiment."
+          },
+          "publisher": {
+            "en": "IOP PUBLISHING LTD"
+          },
+          "publication_date": "2015-04-28",
+          "publication_name": {
+            "ja": "J. Phys.: Conf. Ser.",
+            "en": "Journal of Physics: Conference Series"
+          },
+          "volume": "603",
+          "starting_page": "012012-1",
+          "ending_page": "012012-6",
+          "languages": [
+            "eng"
+          ],
+          "referee": true,
+          "invited": false,
+          "published_paper_type": "international_conference_proceedings",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.1088/1742-6596/603/1/012012"
+            ],
+            "issn": [
+              "1742-6588",
+              "1742-6596"
+            ],
+            "orcid_put_cd": [
+              "166158240"
+            ],
+            "wos_id": [
+              "WOS:000354706900012"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.1088/1742-6596/603/1/012012",
+              "is_downloadable": false
+            },
+            {
+              "label": "web_of_science",
+              "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000354706900012&DestApp=WOS_CPL",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/16848468",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "16848468",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2019-06-26T05:52:35Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:41:49Z",
+          "paper_title": {
+            "en": "Effect of Interlayer Spin-Flip Tunneling for Interlayer Magnetoresistance in Multilayer Massless Dirac Fermion Systems"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Takao Morinari"
+              }
+            ]
+          },
+          "description": {
+            "en": "We investigate the effect of the interlayer spin-flip tunneling for the interlayer magnetoresistance under magnetic fields in alpha-(BEDT-TTF)(2)I-3, which is a multilayer massless Dirac fermion system under pressure. The mean field of the spin-flip correlation associated with the interlayer Coulomb interaction enables the interlayer spin-flip tunneling. Assuming the non-vertical interlayer spin-flip tunneling, we calculate the interlayer magnetoresistance using the Kubo formula. The crossover magnetic field, at which the interlayer magnetoresistance changes from positive to negative is shifted by the Zeeman energy and in good agreement with the experiment."
+          },
+          "publisher": {
+            "en": "PHYSICAL SOC JAPAN"
+          },
+          "publication_date": "2014-08-15",
+          "publication_name": {
+            "en": "Journal of the Physical Society of Japan"
+          },
+          "volume": "83",
+          "number": "8",
+          "languages": [
+            "eng"
+          ],
+          "referee": true,
+          "invited": false,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.7566/jpsj.83.083701"
+            ],
+            "issn": [
+              "0031-9015",
+              "1347-4073"
+            ],
+            "orcid_put_cd": [
+              "166158310"
+            ],
+            "arxiv_id": [
+              "arXiv:1406.7110"
+            ],
+            "wos_id": [
+              "WOS:000339806400005"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.7566/jpsj.83.083701",
+              "is_downloadable": false
+            },
+            {
+              "label": "arxiv",
+              "@id": "http://arxiv.org/abs/arXiv:1406.7110",
+              "is_downloadable": false
+            },
+            {
+              "label": "web_of_science",
+              "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000339806400005&DestApp=WOS_CPL",
+              "is_downloadable": false
+            },
+            {
+              "@id": "http://arxiv.org/abs/1406.7110v2",
+              "label": "url",
+              "is_downloadable": false
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/16848467",
+          "@type": "published_papers",
+          "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
+          "rm:id": "16848467",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2019-06-26T05:52:34Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:41:57Z",
+          "paper_title": {
+            "en": "Spin-Ordered States in Multilayer Massless Dirac Fermion Systems"
+          },
+          "authors": {
+            "en": [
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Takao Morinari"
+              }
+            ]
+          },
+          "description": {
+            "en": "We investigate the spin-ordered states in multilayer massless Dirac fermion systems under magnetic fields, in which the intralayer interaction is ferromagnetic owing to the exchange interaction, while the interlayer interaction is antiferromagnetic arising from the interlayer hopping and the on-site Coulomb repulsion. The possible spin-ordered states are examined within the mean field theory, and we apply it to alpha-(BEDT-TTF)(2)I-3, which is a multilayer massless Dirac fermion system under pressure. In the weak interlayer coupling regime the system exhibits a ferromagnetically spin-ordered state with the effective Zeeman g-factor less than two contrasting to that observed in the single-layer graphene."
+          },
+          "publisher": {
+            "en": "PHYSICAL SOC JAPAN"
+          },
+          "publication_date": "2014-03-15",
+          "publication_name": {
+            "en": "Journal of the Physical Society of Japan"
+          },
+          "volume": "83",
+          "number": "3",
+          "languages": [
+            "eng"
+          ],
+          "referee": true,
+          "invited": false,
+          "published_paper_type": "scientific_journal",
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.7566/jpsj.83.033702"
+            ],
+            "issn": [
+              "0031-9015",
+              "1347-4073"
+            ],
+            "orcid_put_cd": [
+              "166158332"
+            ],
+            "arxiv_id": [
+              "arXiv:1406.7109"
+            ],
+            "wos_id": [
+              "WOS:000331880400004"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.7566/jpsj.83.033702",
+              "is_downloadable": false
+            },
+            {
+              "label": "arxiv",
+              "@id": "http://arxiv.org/abs/arXiv:1406.7109",
+              "is_downloadable": false
+            },
+            {
+              "label": "web_of_science",
+              "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000331880400004&DestApp=WOS_CPL",
+              "is_downloadable": false
+            },
+            {
+              "@id": "http://arxiv.org/abs/1406.7109v1",
+              "label": "url",
+              "is_downloadable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/misc",
+      "@type": "misc",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 2,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/misc/47509598",
+          "@type": "misc",
+          "@reverse": "https://api.researchmap.jp/kenjikun/misc",
+          "rm:id": "47509598",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:33:40Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:33:40Z",
+          "paper_title": {
+            "ja": "「量子の未来」をめぐる 23の話題 : 株式会社メルカリ mercari R4D量子情報技術チームへの重点的グループインタビュー"
+          },
+          "authors": {
+            "ja": [
+              {
+                "name": "森下 翔"
+              },
+              {
+                "name": "肥後 楽"
+              },
+              {
+                "name": "永山 翔太"
+              },
+              {
+                "name": "寺元 健太郎"
+              },
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "門 裕介"
+              },
+              {
+                "name": "鹿野 祐介"
+              },
+              {
+                "name": "小林 茉莉子"
+              },
+              {
+                "name": "岸本 充生"
+              }
+            ]
+          },
+          "publication_date": "2023-08",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/misc/47509550",
+          "@type": "misc",
+          "@reverse": "https://api.researchmap.jp/kenjikun/misc",
+          "rm:id": "47509550",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:45:43Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:45:43Z",
+          "paper_title": {
+            "ja": "博士号取得によるキャリア形成"
+          },
+          "authors": {
+            "ja": [
+              {
+                "name": "久保 健治"
+              }
+            ]
+          },
+          "publisher": {
+            "ja": "公益社団法人 応用物理学会"
+          },
+          "publication_date": "2023-08-01",
+          "publication_name": {
+            "ja": "応用物理"
+          },
+          "volume": "92",
+          "number": "8",
+          "starting_page": "485",
+          "ending_page": "486",
+          "languages": [
+            "jpn"
+          ],
+          "rm:is_open_access": false,
+          "identifiers": {
+            "doi": [
+              "10.11470/oubutsu.92.8_485"
+            ],
+            "issn": [
+              "0369-8009"
+            ],
+            "e_issn": [
+              "2188-2290"
+            ],
+            "cinii_cr_id": [
+              "1390015487572592512"
+            ]
+          },
+          "see_also": [
+            {
+              "label": "doi",
+              "@id": "https://doi.org/10.11470/oubutsu.92.8_485",
+              "is_downloadable": false
+            },
+            {
+              "label": "cinii_research",
+              "@id": "https://cir.nii.ac.jp/crid/1390015487572592512?lang=ja",
+              "is_downloadable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/presentations",
+      "@type": "presentations",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 13,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509554",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509554",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:46:02Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:46:02Z",
+          "presentation_title": {
+            "en": "Optimal Liquidation Strategy for Cryptocurrency Markets Using Stochastic Control",
+            "ja": "確率制御を用いた暗号資産販売所における最適流動化戦略"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "KUBO Kenji"
+              },
+              {
+                "name": "NAKAGAWA Kei"
+              },
+              {
+                "name": "MIZUKAMI Daiki"
+              },
+              {
+                "name": "ACHARYA Dipesh"
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "中川 慧"
+              },
+              {
+                "name": "水上 大樹"
+              },
+              {
+                "name": "Acharya Dipesh"
+              }
+            ]
+          },
+          "event": {
+            "en": "JSAI Technical Report, Type 2 SIG",
+            "ja": "人工知能学会第二種研究会資料"
+          },
+          "publication_date": "2022-10-08",
+          "from_event_date": "2022-10-08",
+          "to_event_date": "2022-10-08",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Japanese Society for Artificial Intelligence",
+            "ja": "一般社団法人 人工知能学会"
+          },
+          "description": {
+            "ja": "暗号資産販売所は、ビッド・アスク価格を提示し、顧客から暗号資産の注文を受け付ける相対取引サービスであり、暗号資産市場に流動性を供給している。顧客からの注文によって販売所の暗号資産の在庫は変化し、一方で、在庫は常に価格変動リスクに晒される。このため、適切な在庫管理が必要になる。同じ相対取引サービスである FX ディーラーの在庫管理問題については、確率制御に基づいた最適流動化戦略が提案されている。ただし、暗号資産市場は FX 市場と比べ、流動性が低く、ボラティリティが大きい。更に、暗号資産販売所においては顧客から注文に大きな偏りがみられる。そのため、暗号資産販売所における在庫管理問題を解決するためには、暗号資産市場に特有の性質を考慮して、最適流動化戦略を構築する必要がある。そこで、本研究では暗号資産販売所に対する在庫管理問題を定義し、確率制御に基づき最適流動化戦略を提案する。また、モデルパラメータを bitFlyer の公開データを用いて推定し、数値計算により、最適流動化戦略を得た。得られた結果から、注文頻度の偏りが最適流動化戦略に影響を与えることを示した。また、単純な流動化戦略と比較することで、提案手法の有効性も確認した。本研究は暗号資産販売所における最適流動化戦略という新たな領域を開拓するものになるであろう。"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.11517/jsaisigtwo.2022.fin-029_23",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509592",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509592",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:25:02Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:25:37Z",
+          "presentation_title": {
+            "ja": "Pricing Multi-asset Derivatives by Finite Difference Method on a Quantum Computer"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "宮本 幸一"
+              },
+              {
+                "name": "久保 健治"
+              }
+            ]
+          },
+          "event": {
+            "ja": "第 56回2021年度冬季JAFEE大会"
+          },
+          "publication_date": "2022-02-19",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509595",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509595",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:29:15Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:29:15Z",
+          "presentation_title": {
+            "ja": "Pricing multi-asset derivatives by finite dierence method on a quantum computer"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "宮本幸一"
+              },
+              {
+                "name": "久保健治"
+              }
+            ]
+          },
+          "event": {
+            "ja": "第5回量子ソフトウェア研究発表会"
+          },
+          "publication_date": "2022",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47537302",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47537302",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-27T10:59:16Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-27T10:59:16Z",
+          "presentation_title": {
+            "ja": "Variational quantum simulations of stochastic differential equations",
+            "en": "Variational quantum simulations of stochastic differential equations"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Yuya Nakagawa"
+              },
+              {
+                "name": "Suguru Endo"
+              },
+              {
+                "name": "Shota Nagayama"
+              }
+            ],
+            "en": [
+              {
+                "name": "Kenji Kubo, Yuya Nakagawa, Suguru Endo and Shota Nagayama"
+              }
+            ]
+          },
+          "event": {
+            "ja": "Asian Conference on Quantum Information Science 2021",
+            "en": "Asian Conference on Quantum Information Science 2021"
+          },
+          "publication_date": "2021-09",
+          "presentation_type": "poster_presentation",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509593",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509593",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:27:06Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:27:06Z",
+          "presentation_title": {
+            "ja": "変分量子シミュレーションによる多資産デリバティブの価格決定"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "久保健治"
+              },
+              {
+                "name": "宮本幸一"
+              }
+            ]
+          },
+          "event": {
+            "ja": "第45 回量子情報技術研究会"
+          },
+          "publication_date": "2021",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509589",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509589",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:22:28Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:22:28Z",
+          "presentation_title": {
+            "ja": "金融分野への量子コンピュータの応用"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "久保健治"
+              }
+            ]
+          },
+          "event": {
+            "ja": "Q-LEAP 分野横断ワークショップ 量子コンピュータ研究開発の現在とこれから"
+          },
+          "publication_date": "2020-01-29",
+          "presentation_type": "public_discourse",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509594",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509594",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:28:07Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:28:21Z",
+          "presentation_title": {
+            "ja": "変分量子計算による確率微分方程式のシミュレーション 学生奨励賞受賞"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "久保健治"
+              },
+              {
+                "name": "中川 裕也"
+              },
+              {
+                "name": "遠藤傑"
+              },
+              {
+                "name": "永山翔太"
+              }
+            ]
+          },
+          "event": {
+            "ja": "第1回量子ソフトウェア研究発表会"
+          },
+          "publication_date": "2020",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509599",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509599",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:34:29Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:34:29Z",
+          "presentation_title": {
+            "ja": "デリバティブ価格決定問題へのNISQアルゴリズムの応用可能性と課題—Applicability and Challenges of NISQ Algorithm to Financial Derivative"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "永山 翔太"
+              }
+            ]
+          },
+          "event": {
+            "ja": "量子情報技術研究会資料 / 電子情報通信学会"
+          },
+          "publication_date": "2019-11",
+          "from_event_date": "2019-11",
+          "to_event_date": "2019-11",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "ja": "[東京] : 量子情報技術時限研究専門委員会"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "http://id.ndl.go.jp/bib/032745697",
+              "is_downloadable": false,
+              "label": "url"
+            },
+            {
+              "@id": "https://ndlsearch.ndl.go.jp/books/R000000004-I032745697",
+              "is_downloadable": false,
+              "label": "url"
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47537287",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47537287",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-27T10:56:11Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-27T10:57:30Z",
+          "presentation_title": {
+            "ja": "Fundamental scheme to descrive scenarios in extensive-form games by Quantum Annealing",
+            "en": "Fundamental scheme to descrive scenarios in extensive-form games by Quantum Annealing"
+          },
+          "presenters": {
+            "ja": [
+              {
+                "name": "Shota Nagayama"
+              },
+              {
+                "name": "Takahiko Satoh"
+              },
+              {
+                "name": "Kenji Kubo"
+              }
+            ],
+            "en": [
+              {
+                "name": "Shota Nagayama"
+              },
+              {
+                "name": "Takahiko Satoh"
+              },
+              {
+                "name": "Kenji Kubo"
+              }
+            ]
+          },
+          "event": {
+            "ja": "Asian Conference on Quantum Information Science 2019",
+            "en": "Asian Conference on Quantum Information Science 2019"
+          },
+          "publication_date": "2019-08",
+          "presentation_type": "poster_presentation",
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509552",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509552",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:45:43Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:45:43Z",
+          "presentation_title": {
+            "en": "17pCG-10 Numerical Simulation of Spin Current Generation in Antiferromagnetic Skyrmion",
+            "ja": "17pCG-10 反強磁性スカーミオンにおけるスピン流生成の数値シミュレーション"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "Kubo K."
+              },
+              {
+                "name": "Morinari T."
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "森成 隆夫"
+              }
+            ]
+          },
+          "event": {
+            "en": "Meeting Abstracts of the Physical Society of Japan",
+            "ja": "日本物理学会講演概要集"
+          },
+          "publication_date": "2015",
+          "from_event_date": "2015",
+          "to_event_date": "2015",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Physical Society of Japan",
+            "ja": "一般社団法人 日本物理学会"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.11316/jpsgaiyo.70.2.0_890",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509551",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509551",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:45:43Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:45:43Z",
+          "presentation_title": {
+            "en": "24pDC-7 Theory of Incommensurate Spin Correlation and Hour-glass-like Excitation Spectrum in Copper Oxide Superconductors",
+            "ja": "24pDC-7 銅酸化物高温超伝導体における非整合スピン相関と砂時計型励起スペクトルの理論"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "Kubo K."
+              },
+              {
+                "name": "Morinari T."
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "森成 隆夫"
+              }
+            ]
+          },
+          "event": {
+            "en": "Meeting Abstracts of the Physical Society of Japan",
+            "ja": "日本物理学会講演概要集"
+          },
+          "publication_date": "2015",
+          "from_event_date": "2015",
+          "to_event_date": "2015",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Physical Society of Japan",
+            "ja": "一般社団法人 日本物理学会"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.11316/jpsgaiyo.70.1.0_2487",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/35357842",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "35357842",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "ai:assign_based_internal_feeds",
+          "rm:creator_type": "ai",
+          "rm:created": "2021-10-26T10:51:09Z",
+          "rm:modifier_id": "ai:assign_based_internal_feeds",
+          "rm:modifier_type": "ai",
+          "rm:modified": "2021-10-26T10:51:09Z",
+          "presentation_title": {
+            "en": "9aAG-10 Effect of Interlayer Spin-Flip Tunneling for Interlayer Magnetoresistance in Multilayer Dirac Fermion Systems",
+            "ja": "9aAG-10 多層Dirac電子系における層間磁気抵抗へのスピン反転トンネリングの効果(9aAG ディラック電子系,領域7(分子性固体))"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "Kubo Kenji"
+              },
+              {
+                "name": "Morinari Takao"
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "森成 隆夫"
+              }
+            ]
+          },
+          "event": {
+            "en": "Meeting abstracts of the Physical Society of Japan",
+            "ja": "日本物理学会講演概要集"
+          },
+          "publication_date": "2014-08-22",
+          "from_event_date": "2014-08-22",
+          "to_event_date": "2014-08-22",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Physical Society of Japan (JPS)",
+            "ja": "一般社団法人日本物理学会"
+          },
+          "rm:is_open_access": false
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/47509549",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "47509549",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T19:45:43Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T19:45:43Z",
+          "presentation_title": {
+            "en": "29pCL-7 Spin ordered states in multilayer Dirac electron systems",
+            "ja": "29pCL-7 多層Dirac電子系におけるスピン秩序状態(29pCL 多層ディラック電子系α-(ET)_2I_3,領域7(分子性固体))"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "Kubo Kenji"
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              }
+            ]
+          },
+          "event": {
+            "en": "Meeting Abstracts of the Physical Society of Japan",
+            "ja": "日本物理学会講演概要集"
+          },
+          "publication_date": "2014",
+          "from_event_date": "2014",
+          "to_event_date": "2014",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Physical Society of Japan",
+            "ja": "一般社団法人 日本物理学会"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.11316/jpsgaiyo.69.1.4.0_861_1",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "https://api.researchmap.jp/kenjikun/industrial_property_rights",
+      "@type": "industrial_property_rights",
+      "@reverse": "https://api.researchmap.jp/kenjikun",
+      "total_items": 1,
+      "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/industrial_property_rights/47509627",
+          "@type": "industrial_property_rights",
+          "@reverse": "https://api.researchmap.jp/kenjikun/industrial_property_rights",
+          "rm:id": "47509627",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2024-08-25T20:51:46Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2024-08-25T20:53:49Z",
+          "industrial_property_right_type": "patent_right",
+          "industrial_property_right_title": {
+            "ja": "量子コンピュータを用いた有限差分法によるマルチアセットデリバティブの時価評価手法"
+          },
+          "inventors": {
+            "ja": [
+              {
+                "name": "宮本幸一"
+              },
+              {
+                "name": "久保健治"
+              }
+            ]
+          },
+          "application_number": "特願2021-15444"
+        }
+      ]
+    }
+  ],
+  "last_updated": "2025-02-25 23:19:56"
+}

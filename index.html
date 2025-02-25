@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenji Kubo | Researcher Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Markdown変換用のライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* markdownタイトルを非表示にする */
+        .markdown-content h1:first-child,
+        .markdown-content h2:first-child {
+            display: none;
+        }
+        
+        /* SNSアイコンのスタイリング */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            background-color: #007bff;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .social-icons i {
+            font-size: 20px;
+        }
+        
+        /* 洗練されたSNSリンクのスタイル */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            color: #333;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .social-links a:hover i.fa-x-twitter {
+            color: #1DA1F2;
+        }
+        
+        .social-links a:hover i.fa-youtube {
+            color: #FF0000;
+        }
+        
+        .social-links a:hover i.fa-github {
+            color: #333;
+        }
+        
+        .social-links i {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kenji Kubo</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#presentations">Presentations</a></li>
+                <li><a href="#projects">Research Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="profile">
+                <h2>Profile</h2>
+                <div id="profile-content" class="markdown-content" data-source="_auto_contents/profile.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="research">
+                <h2>Research</h2>
+                <div id="research-content" class="markdown-content" data-source="_contents/research.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <div id="papers-content" class="markdown-content" data-source="_auto_contents/papers.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="books">
+                <h2>Books</h2>
+                <div id="books-content" class="markdown-content" data-source="_auto_contents/books.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="presentations">
+                <h2>Presentations</h2>
+                <div id="presentations-content" class="markdown-content" data-source="_auto_contents/presentations.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Research Projects</h2>
+                <div id="projects-content" class="markdown-content" data-source="_auto_contents/projects.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <section id="awards">
+                <h2>Awards</h2>
+                <div id="awards-content" class="markdown-content" data-source="_auto_contents/awards.md">
+                    <div class="loading">Loading data...</div>
+                </div>
+            </section>
+
+            <div class="update-info">
+                <p>Last updated: <span id="last-updated">-</span></p>
+                <p>Data source: <a href="https://researchmap.jp/kenjikun" target="_blank">researchmap</a></p>
+            </div>
+
+            <!-- SNSアイコンは fetch_researchmap.py で生成するマークダウンに含まれるため削除 -->
+            <div class="profile-section">
+                <!-- SNSアイコンは fetch_researchmap.py で生成するマークダウンに含まれるため削除 -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Kenji Kubo</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
