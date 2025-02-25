@@ -95,6 +95,57 @@
         .social-links i {
             font-size: 22px;
         }
+        
+        /* プロフィール写真のスタイル */
+        .profile-with-image {
+            position: relative;
+        }
+        
+        .profile-info {
+            float: left;
+            width: 60%;
+        }
+        
+        .profile-image {
+            float: right;
+            width: 35%;
+            text-align: right;
+            margin-top: 0;
+        }
+        
+        .profile-image img {
+            max-width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        /* レスポンシブデザイン用 */
+        @media (max-width: 768px) {
+            .profile-info, .profile-image {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin: 20px 0;
+            }
+        }
+        
+        /* プロフィールセクションの上部マージン調整 */
+        #profile {
+            margin-top: 40px;
+        }
+        
+        /* またはh2要素に対して調整する場合 */
+        #profile h2 {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -120,15 +171,23 @@
         <div class="content">
             <section id="profile">
                 <h2>Profile</h2>
-                <div id="profile-content" class="markdown-content">
-                    <p><strong>Degree</strong>: Ph.D. in Science</p>
-                    <p><strong>Email</strong>: kenji.kubo [at] weblab.t.u-tokyo.ac.jp</p>
-                    
-                    <div class="social-links">
-                        <a href="https://x.com/richwomanbtc" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@richwomanbtc4675" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://github.com/richwomanbtc" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <div id="profile-content" class="markdown-content profile-with-image">
+                    <div class="profile-info">
+                        <p><strong>Degree</strong>: Ph.D. in Science</p>
+                        <p><strong>Email</strong>: kenji.kubo [at] weblab.t.u-tokyo.ac.jp</p>
+                        
+                        <div class="social-links">
+                            <a href="https://x.com/richwomanbtc" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/@richwomanbtc4675" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://github.com/richwomanbtc" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
+                    
+                    <div class="profile-image">
+                        <img src="assets/images/profile.jpg" alt="Kenji Kubo" />
+                    </div>
+                    
+                    <div class="clear"></div>
                     
                     <h2>Career</h2>
                     <ul>

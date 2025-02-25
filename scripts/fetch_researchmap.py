@@ -193,9 +193,6 @@ def generate_profile_markdown(data):
     # メールアドレスを追加
     md += "**Email**: kenji.kubo [at] weblab.t.u-tokyo.ac.jp\n\n"
 
-    # SNSアイコン（見出しなし）
-    # md += "## SNS\n\n"  # 見出しを削除
-
     # TwitterアイコンをFontAwesome 5で使用する正しいクラス名に修正
     md += '<div class="social-links">\n'
     md += '  <a href="https://x.com/richwomanbtc" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>\n'
