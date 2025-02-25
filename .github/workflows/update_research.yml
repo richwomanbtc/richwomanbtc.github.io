@@ -13,13 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # リポジトリへのwrite権限を明示的に付与
-      pages: write # Pagesへのデプロイ権限
-      id-token: write # OIDC認証用
-
-    # 環境変数の設定
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -44,7 +37,7 @@ jobs:
       - name: Update research data
         run: poetry run python scripts/fetch_researchmap.py
 
-      - name: Commit changes
+      - name: Commit changes to main
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -52,17 +45,24 @@ jobs:
           git commit -m "Update research data (automated)" || echo "No changes to commit"
           git push
 
-      # GitHub Pagesの設定
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      # pageブランチへのデプロイを準備
+      - name: Build and deploy to page branch
+        run: |
+          # pageブランチが存在するか確認し、なければ作成
+          git fetch origin
+          if ! git ls-remote --heads origin page | grep page; then
+            git checkout -b page
+            git push -u origin page
+          else
+            git checkout -b temp_deploy
+            git fetch origin page
+            git reset --hard origin/page
+          fi
 
-      # アーティファクトのアップロード
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "." # リポジトリのルートディレクトリ
+          # mainブランチからコンテンツをコピー
+          git checkout main -- .
 
-      # GitHub Pagesへのデプロイ
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          # pageブランチにプッシュ
+          git add .
+          git commit -m "Deploy to page branch (automated)" || echo "No changes to deploy"
+          git push origin HEAD:page
