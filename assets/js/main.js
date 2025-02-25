@@ -196,24 +196,30 @@ function loadMarkdownContent() {
 // プロフィール写真を挿入する関数
 function insertProfileImage() {
   const profileContent = document.getElementById("profile-content");
-  const firstHeading = profileContent.querySelector("h2"); // CareerまたはEducationの見出し
+  if (!profileContent) return;
 
-  if (firstHeading) {
+  // プロフィール情報（<h2>より前の内容）を取得
+  const firstH2Index = profileContent.innerHTML.indexOf("<h2");
+
+  if (firstH2Index > 0) {
+    // プロフィール情報とセクション（CareerとEducation）を分離
+    const profileInfo = profileContent.innerHTML.slice(0, firstH2Index);
+    const sections = profileContent.innerHTML.slice(firstH2Index);
+
+    // 新しいレイアウトを構築
     const imageHTML = `
       <div class="profile-with-image">
         <div class="profile-info">
-          ${profileContent.innerHTML.slice(
-            0,
-            profileContent.innerHTML.indexOf("<h2")
-          )}
+          ${profileInfo}
         </div>
         <div class="profile-image">
           <img src="assets/images/profile.jpg" alt="Kenji Kubo" />
         </div>
         <div class="clear"></div>
       </div>
-      ${profileContent.innerHTML.slice(profileContent.innerHTML.indexOf("<h2"))}
+      ${sections}
     `;
+
     profileContent.innerHTML = imageHTML;
   }
 }
