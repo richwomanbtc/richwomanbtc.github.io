@@ -37,32 +37,32 @@ jobs:
       - name: Update research data
         run: poetry run python scripts/fetch_researchmap.py
 
-      - name: Commit changes to main
+      - name: Deploy to page branch
         run: |
+          # Git設定
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _auto_contents/ _data/ poetry.lock
-          git commit -m "Update research data (automated)" || echo "No changes to commit"
-          git push
 
-      # pageブランチへのデプロイを準備
-      - name: Build and deploy to page branch
-        run: |
+          # 現在の変更を保存（pageブランチへのデプロイ用）
+          git add _auto_contents/ _data/ poetry.lock
+
           # pageブランチが存在するか確認し、なければ作成
           git fetch origin
           if ! git ls-remote --heads origin page | grep page; then
             git checkout -b page
+            git commit -m "Initial deployment to page branch"
             git push -u origin page
           else
+            # 既存のpageブランチにデプロイ
             git checkout -b temp_deploy
             git fetch origin page
             git reset --hard origin/page
+            
+            # 更新したデータを適用
+            git checkout FETCH_HEAD -- _auto_contents/ _data/ poetry.lock
+            
+            # 変更をコミット
+            git add .
+            git commit -m "Deploy updated research data (automated)" || echo "No changes to deploy"
+            git push origin HEAD:page
           fi
-
-          # mainブランチからコンテンツをコピー
-          git checkout main -- .
-
-          # pageブランチにプッシュ
-          git add .
-          git commit -m "Deploy to page branch (automated)" || echo "No changes to deploy"
-          git push origin HEAD:page
