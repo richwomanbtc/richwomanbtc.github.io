@@ -25,4 +25,7 @@ auto_content: true
 
 ## Education
 
+- **Osaka University**, Graduate School of Engineering Science (2019-10 - 2022-09)
+- **Kyoto University**, Graduate School of Human and Environmental Studies (2013-04 - 2015-03)
+- **Kyoto University**, Faculty of Science (2009-04 - 2013-03)
 
