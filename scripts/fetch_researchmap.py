@@ -5,7 +5,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -40,8 +40,8 @@ def save_json_data(data):
         os.makedirs(DATA_DIR)
 
     # 最終更新日時を追加
-    now = datetime.utcnow()  # UTCで現在時刻を取得
-    update_time = now.strftime("%Y-%m-%d %H:%M")  # フォーマット
+    now = datetime.now(tz=timezone.utc)  # UTCで現在時刻を取得
+    update_time = now.strftime("%Y/%m/%d %H:%M")  # フォーマット
     data["last_updated"] = f"{update_time} (UTC)"  # UTC明記
 
     file_path = os.path.join(DATA_DIR, "research_data.json")
@@ -240,12 +240,12 @@ def generate_profile_markdown(data):
                 # 期間
                 period = ""
                 if "from_date" in exp and exp["from_date"]:
-                    period += exp["from_date"]
+                    period += exp["from_date"].replace("-", "/")
                 if "to_date" in exp and exp["to_date"]:
                     if exp["to_date"] == "9999":
                         period += " - Present"
                     else:
-                        period += f" - {exp['to_date']}"
+                        period += f" - {exp['to_date'].replace('-', '/')}"
 
                 # 役職も英語で
                 position = ""
@@ -310,12 +310,12 @@ def generate_profile_markdown(data):
             # 期間
             period = ""
             if "from_date" in edu and edu["from_date"]:
-                period += edu["from_date"]
+                period += edu["from_date"].replace("-", "/")
             if "to_date" in edu and edu["to_date"]:
                 if edu["to_date"] == "9999":
                     period += " - Present"
                 else:
-                    period += f" - {edu['to_date']}"
+                    period += f" - {edu['to_date'].replace('-', '/')}"
 
             if school:
                 md += f"- **{school}**"
