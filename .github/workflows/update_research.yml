@@ -63,11 +63,16 @@ jobs:
             git checkout page || git checkout -b page --track origin/page
             git pull origin page
             
-            # mainブランチの内容を反映（コンフリクトはmainの内容を優先）
-            git checkout main -- .
+            # mainブランチの内容を反映（stashから復元）
+            git stash pop || true
+            
+            # データ更新スクリプトを再実行して変更を確実に適用
+            poetry run python scripts/fetch_researchmap.py
             
             # 変更を確認してコミット
             git add -A
-            git diff --staged --quiet || git commit -m "Deploy updated site content (automated)"
-            git push origin page
+            git status
+            git diff --staged
+            git commit -m "Deploy updated site content (automated)" || echo "No changes to commit"
+            git push origin page || echo "No changes to push"
           fi
