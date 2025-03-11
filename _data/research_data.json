@@ -8,7 +8,7 @@
   "rm:created": "2019-06-26T05:41:49Z",
   "rm:modifier_id": "B000361821",
   "rm:modifier_type": "myself",
-  "rm:modified": "2025-02-25T14:15:08Z",
+  "rm:modified": "2025-03-11T15:03:34Z",
   "permalink": "kenjikun",
   "family_name": {
     "ja": "久保",
@@ -188,9 +188,9 @@
           "rm:created": "2024-08-25T20:35:57Z",
           "rm:modifier_id": "B000361821",
           "rm:modifier_type": "myself",
-          "rm:modified": "2025-02-25T13:59:08Z",
+          "rm:modified": "2025-03-11T15:00:56Z",
           "from_date": "2018-09",
-          "to_date": "9999",
+          "to_date": "2025-03",
           "rm:institution_code": "9999999999",
           "affiliation": {
             "ja": "株式会社メルカリ",
@@ -393,19 +393,19 @@
       "total_items": 10,
       "items": [
         {
-          "@id": "https://api.researchmap.jp/kenjikun/published_papers/48934407",
+          "@id": "https://api.researchmap.jp/kenjikun/published_papers/49402983",
           "@type": "published_papers",
           "@reverse": "https://api.researchmap.jp/kenjikun/published_papers",
-          "rm:id": "48934407",
+          "rm:id": "49402983",
           "rm:user_id": "B000361821",
           "display": "disclosed",
           "major_achievement": false,
-          "rm:creator_id": "external:ORCID",
-          "rm:creator_type": "trusted_institution",
-          "rm:created": "2025-01-15T23:24:10Z",
-          "rm:modifier_id": "external:ORCID",
-          "rm:modifier_type": "trusted_institution",
-          "rm:modified": "2025-01-21T00:30:36Z",
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2025-03-11T15:03:08Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-03-11T15:03:34Z",
           "paper_title": {
             "en": "Portfolio optimization using deep learning with risk aversion utility function"
           },
@@ -1211,8 +1211,132 @@
       "@id": "https://api.researchmap.jp/kenjikun/presentations",
       "@type": "presentations",
       "@reverse": "https://api.researchmap.jp/kenjikun",
-      "total_items": 13,
+      "total_items": 15,
       "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/48934407",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "48934407",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "external:ORCID",
+          "rm:creator_type": "trusted_institution",
+          "rm:created": "2025-01-15T23:24:10Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-03-11T14:55:44Z",
+          "presentation_title": {
+            "en": "Portfolio optimization using deep learning with risk aversion utility function",
+            "ja": "リスク回避型効用関数を用いた深層学習によるポートフォリオ最適化"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "Kenji Kubo"
+              },
+              {
+                "name": "Kei Nakagawa"
+              }
+            ],
+            "ja": [
+              {
+                "name": "久保 健治"
+              },
+              {
+                "name": "中川 慧"
+              }
+            ]
+          },
+          "event": {
+            "en": "Finance Research Letters",
+            "ja": "人工知能学会第二種研究会資料"
+          },
+          "publication_date": "2025-03",
+          "from_event_date": "2025-03",
+          "to_event_date": "2025-03",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Japanese Society for Artificial Intelligence",
+            "ja": "一般社団法人 人工知能学会"
+          },
+          "description": {
+            "en": "本論文では､深層学習~(DL)を用いたﾎﾟｰﾄﾌｫﾘｵ最適化に取り組む｡DLにより､従来のCAPMやﾌｧｸﾀｰﾓﾃﾞﾙでは扱えなかったﾘﾀｰﾝの非線形性をﾓﾃﾞﾙに組み込むことが可能となった｡しかし､DLを用いたﾎﾟｰﾄﾌｫﾘｵ構築においても､ﾘｽｸとﾘﾀｰﾝのﾄﾚｰﾄﾞｵﾌを最適化することが重要であり､このﾄﾚｰﾄﾞｵﾌを考慮するためにSharpe lossという損失関数が提案された｡この方法は､実証的に有用であるが､Sharpe lossには理論的問題がある｡まず､損益が負の値を取る場合､その解釈が難しく､非直感的なﾎﾟｰﾄﾌｫﾘｵを構築すること､次に確率的勾配降下法を用いた際に､勾配が不偏推定量とならないことである｡そこで本論文では､DLを用いたﾎﾟｰﾄﾌｫﾘｵ最適化のためのﾘｽｸ回避型効用関数を用いた新しい損失関数を提案する｡ﾘｽｸ回避型効用関数は損益が負の場合でも解釈が容易であり､また､勾配が不偏推定量となるため､Sharpe lossが抱えていた問題を回避することができる｡加えて､DLからの出力をﾍﾞｰｽﾗｲﾝ戦略のｳｴｲﾄから差分とすることで､より優れたﾎﾟｰﾄﾌｫﾘｵが構築可能であることを示す｡提案手法の有効性を確認するためにS\\&P500の過去ﾃﾞｰﾀを用いた実験を行った｡提案手法がSharpe ratioを含めたいくつかの指標でSharpe lossを用いた場合よりも良いﾊﾟﾌｫｰﾏﾝｽが得られることを示す｡"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.1016/j.frl.2025.106761",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        },
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/presentations/49402974",
+          "@type": "presentations",
+          "@reverse": "https://api.researchmap.jp/kenjikun/presentations",
+          "rm:id": "49402974",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2025-03-11T14:58:22Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-03-11T14:58:22Z",
+          "presentation_title": {
+            "en": "Dynamic Portfolio Optimization Using Deep Learning Models with Multi-step Utility Loss",
+            "ja": "Multi-step Utility Lossを用いた深層学習モデルよる動的ポートフォリオ最適化"
+          },
+          "presenters": {
+            "en": [
+              {
+                "name": "KUBO Kenji"
+              },
+              {
+                "name": "NAKAGAWA Kei"
+              }
+            ],
+            "ja": [
+              {
+                "name": "Kubo Kenji"
+              },
+              {
+                "name": "Nakagawa Kei"
+              }
+            ]
+          },
+          "event": {
+            "en": "JSAI Technical Report, Type 2 SIG",
+            "ja": "人工知能学会第二種研究会資料"
+          },
+          "publication_date": "2025-02-23",
+          "from_event_date": "2025-02-23",
+          "to_event_date": "2025-02-23",
+          "languages": [
+            "jpn"
+          ],
+          "promoter": {
+            "en": "The Japanese Society for Artificial Intelligence",
+            "ja": "一般社団法人 人工知能学会"
+          },
+          "description": {
+            "ja": "本研究では、取引コストを考慮しながら動的なポートフォリオ最適化を行うために、Multi-step CARA型損失関数(MS-CARA Loss)を提案する。MS-CARA Lossでは、リバランスによる取引コストをペナルティとして組み込みつつ、局所的および大域的なリターンを同時に考慮することで、実運用に近い条件下でのポートフォリオ最適化を行えることを示す。また、MASTER\\cite{li2024master}を参考にした時間方向と銘柄方向に対するDual Attention機構を導入し、市場データに含まれる時系列とクロスセクションの依存関係を包括的に捉えるよう設計した。S\\&P 500の構成銘柄を用いた実証分析では、提案手法が取引コストを考慮した場合でも良好なパフォーマンスを示し、全結合ニューラルネットワークを用いたベースラインを一部指標で上回ることを確認した。これらの結果は、コスト込みでの運用を想定した深層学習によるポートフォリオ最適化に有用である可能性を示唆している。"
+          },
+          "rm:is_open_access": false,
+          "see_also": [
+            {
+              "@id": "https://doi.org/10.11517/jsaisigtwo.2025.fin-034_152",
+              "is_downloadable": false,
+              "label": "doi"
+            }
+          ]
+        },
         {
           "@id": "https://api.researchmap.jp/kenjikun/presentations/47509554",
           "@type": "presentations",
@@ -1870,5 +1994,5 @@
       ]
     }
   ],
-  "last_updated": "2025-02-25 16:12 (UTC)"
+  "last_updated": "2025-03-11 15:37 (UTC)"
 }

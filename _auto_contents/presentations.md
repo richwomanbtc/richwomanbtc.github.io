@@ -6,6 +6,14 @@ auto_content: true
 
 # Presentations
 
+- **リスク回避型効用関数を用いた深層学習によるポートフォリオ最適化**
+ Kenji Kubo, Kei Nakagawa, 久保 健治, 中川 慧
+  Event: 人工知能学会第二種研究会資料
+
+- **Multi-step Utility Lossを用いた深層学習モデルよる動的ポートフォリオ最適化**
+ KUBO Kenji, NAKAGAWA Kei, Kubo Kenji, Nakagawa Kei
+  Event: 人工知能学会第二種研究会資料
+
 - **確率制御を用いた暗号資産販売所における最適流動化戦略**
  KUBO Kenji, NAKAGAWA Kei, MIZUKAMI Daiki, ACHARYA Dipesh, 久保 健治, 中川 慧, 水上 大樹, Acharya Dipesh
   Event: 人工知能学会第二種研究会資料
