@@ -8,7 +8,7 @@
   "rm:created": "2019-06-26T05:41:49Z",
   "rm:modifier_id": "B000361821",
   "rm:modifier_type": "myself",
-  "rm:modified": "2025-03-11T15:03:34Z",
+  "rm:modified": "2025-04-16T02:28:07Z",
   "permalink": "kenjikun",
   "family_name": {
     "ja": "久保",
@@ -23,6 +23,25 @@
   "image": "https://researchmap.jp/kenjikun/avatar.JPG",
   "display_image": "disclosed",
   "display_contact_point": "disclosed",
+  "affiliations": [
+    {
+      "affiliation": {
+        "ja": "東京大学",
+        "en": "The University of Tokyo"
+      },
+      "section": {
+        "ja": "大学院工学系研究科",
+        "en": "The Graduate School of Engineering"
+      },
+      "job": {
+        "ja": "特任研究員",
+        "en": "Project Researcher"
+      },
+      "display_affiliation": "disclosed",
+      "display_job": "disclosed",
+      "rm:institution_code": "0172025000"
+    }
+  ],
   "degrees": [
     {
       "degree": {
@@ -1994,5 +2013,5 @@
       ]
     }
   ],
-  "last_updated": "2025-04-16 00:18 (UTC)"
+  "last_updated": "2025-04-17 00:18 (UTC)"
 }
