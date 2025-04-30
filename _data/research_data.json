@@ -8,7 +8,7 @@
   "rm:created": "2019-06-26T05:41:49Z",
   "rm:modifier_id": "B000361821",
   "rm:modifier_type": "myself",
-  "rm:modified": "2025-04-16T02:28:07Z",
+  "rm:modified": "2025-04-30T02:02:46Z",
   "permalink": "kenjikun",
   "family_name": {
     "ja": "久保",
@@ -164,8 +164,38 @@
       "@id": "https://api.researchmap.jp/kenjikun/research_experience",
       "@type": "research_experience",
       "@reverse": "https://api.researchmap.jp/kenjikun",
-      "total_items": 4,
+      "total_items": 5,
       "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/research_experience/50018518",
+          "@type": "research_experience",
+          "@reverse": "https://api.researchmap.jp/kenjikun/research_experience",
+          "rm:id": "50018518",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2025-04-30T02:02:46Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-04-30T02:02:46Z",
+          "from_date": "2025-04",
+          "to_date": "9999",
+          "rm:institution_code": "0172025000",
+          "affiliation": {
+            "ja": "東京大学",
+            "en": "The University of Tokyo"
+          },
+          "section": {
+            "ja": "大学院工学系研究科",
+            "en": "The Graduate School of Engineering"
+          },
+          "job": {
+            "ja": "特任研究員",
+            "en": "Project Researcher"
+          }
+        },
         {
           "@id": "https://api.researchmap.jp/kenjikun/research_experience/49241991",
           "@type": "research_experience",
@@ -2013,5 +2043,5 @@
       ]
     }
   ],
-  "last_updated": "2025-04-30 00:18 (UTC)"
+  "last_updated": "2025-04-30 21:28 (UTC)"
 }

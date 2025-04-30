@@ -18,6 +18,7 @@ auto_content: true
 
 ## Career
 
+- **The University of Tokyo** The Graduate School of Engineering, Project Researcher (2025-04 - Present)
 - **Matsuo Institute Inc.** 経営戦略本部, Research Engineer (2025-02 - Present)
 - **KKT Goods Wholesalers L.L.C.**, Quantitative trader (2023-04 - 2025-02)
 - **Mercari Inc.** R4D, Researcher (2018-09 - 2025-03)
