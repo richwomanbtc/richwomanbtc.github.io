@@ -290,6 +290,7 @@ files = [
 name = "typing-extensions"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 version = "4.13.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
 category = "dev"
@@ -301,6 +302,8 @@ files = [
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 version = "4.14.0"
 description = "Backported and Experimental Type Hints for Python 3.9+"
 category = "dev"
@@ -310,6 +313,9 @@ files = [
     {file = "typing_extensions-4.14.0-py3-none-any.whl", hash = "sha256:a1514509136dd0b477638fc68d6a91497af5076466ad0fa6c338e44e359944af"},
     {file = "typing_extensions-4.14.0.tar.gz", hash = "sha256:8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"},
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
