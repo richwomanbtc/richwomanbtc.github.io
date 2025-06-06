@@ -906,12 +906,6 @@
               }
             ]
           },
-          "description": {
-            "en": "We investigate the anisotropic spin motive force in alpha-(BEDT-TTF)(2)I-3, which is a multi-layered massless Dirac fermion system under pressure. Assuming the interlayer antiferromagnetic interaction and the interlayer anisotropic ferromagnetic interaction, we numerically examine the spin ordered state of the ground state using the steepest descent method. The anisotropic interaction leads to the anisotropic spin ordered state. We calculate the spin motive force produced by the anisotropic spin texture. The result quantitatively agrees with the experiment."
-          },
-          "publisher": {
-            "en": "IOP PUBLISHING LTD"
-          },
           "publication_date": "2015-04-28",
           "publication_name": {
             "ja": "J. Phys.: Conf. Ser.",
@@ -981,12 +975,6 @@
                 "name": "Takao Morinari"
               }
             ]
-          },
-          "description": {
-            "en": "We investigate the effect of the interlayer spin-flip tunneling for the interlayer magnetoresistance under magnetic fields in alpha-(BEDT-TTF)(2)I-3, which is a multilayer massless Dirac fermion system under pressure. The mean field of the spin-flip correlation associated with the interlayer Coulomb interaction enables the interlayer spin-flip tunneling. Assuming the non-vertical interlayer spin-flip tunneling, we calculate the interlayer magnetoresistance using the Kubo formula. The crossover magnetic field, at which the interlayer magnetoresistance changes from positive to negative is shifted by the Zeeman energy and in good agreement with the experiment."
-          },
-          "publisher": {
-            "en": "PHYSICAL SOC JAPAN"
           },
           "publication_date": "2014-08-15",
           "publication_name": {
@@ -1068,12 +1056,6 @@
                 "name": "Takao Morinari"
               }
             ]
-          },
-          "description": {
-            "en": "We investigate the spin-ordered states in multilayer massless Dirac fermion systems under magnetic fields, in which the intralayer interaction is ferromagnetic owing to the exchange interaction, while the interlayer interaction is antiferromagnetic arising from the interlayer hopping and the on-site Coulomb repulsion. The possible spin-ordered states are examined within the mean field theory, and we apply it to alpha-(BEDT-TTF)(2)I-3, which is a multilayer massless Dirac fermion system under pressure. In the weak interlayer coupling regime the system exhibits a ferromagnetically spin-ordered state with the effective Zeeman g-factor less than two contrasting to that observed in the single-layer graphene."
-          },
-          "publisher": {
-            "en": "PHYSICAL SOC JAPAN"
           },
           "publication_date": "2014-03-15",
           "publication_name": {
@@ -2043,5 +2025,5 @@
       ]
     }
   ],
-  "last_updated": "2025-06-05 00:19 (UTC)"
+  "last_updated": "2025-06-06 00:19 (UTC)"
 }
