@@ -8,7 +8,8 @@
   "rm:created": "2019-06-26T05:41:49Z",
   "rm:modifier_id": "B000361821",
   "rm:modifier_type": "myself",
-  "rm:modified": "2025-04-30T02:02:46Z",
+  "rm:modified": "2025-07-31T08:37:09Z",
+  "agree_terms_of_service_datetime": "2025-07-31 08:34:01",
   "permalink": "kenjikun",
   "family_name": {
     "ja": "久保",
@@ -20,7 +21,7 @@
   },
   "display_name_kana": "disclosed",
   "display_nickname": "disclosed",
-  "image": "https://researchmap.jp/kenjikun/avatar.JPG",
+  "image": "https://researchmap.jp/kenjikun/avatar.JPEG",
   "display_image": "disclosed",
   "display_contact_point": "disclosed",
   "affiliations": [
@@ -412,8 +413,43 @@
       "@id": "https://api.researchmap.jp/kenjikun/awards",
       "@type": "awards",
       "@reverse": "https://api.researchmap.jp/kenjikun",
-      "total_items": 1,
+      "total_items": 2,
       "items": [
+        {
+          "@id": "https://api.researchmap.jp/kenjikun/awards/50746699",
+          "@type": "awards",
+          "@reverse": "https://api.researchmap.jp/kenjikun/awards",
+          "rm:id": "50746699",
+          "rm:user_id": "B000361821",
+          "display": "disclosed",
+          "major_achievement": false,
+          "rm:creator_id": "B000361821",
+          "rm:creator_type": "myself",
+          "rm:created": "2025-07-31T08:35:59Z",
+          "rm:modifier_id": "B000361821",
+          "rm:modifier_type": "myself",
+          "rm:modified": "2025-07-31T08:35:59Z",
+          "award_name": {
+            "ja": "人工知能学会研究会優秀賞"
+          },
+          "winners": {
+            "ja": [
+              {
+                "name": "久保健治"
+              },
+              {
+                "name": "中川慧"
+              }
+            ]
+          },
+          "award_title": {
+            "ja": "リスク回避型効用関数を用いた深層学習によるポートフォリオ最適化"
+          },
+          "association": {
+            "ja": "人工知能学会"
+          },
+          "award_date": "2024"
+        },
         {
           "@id": "https://api.researchmap.jp/kenjikun/awards/47509596",
           "@type": "awards",
@@ -2025,5 +2061,5 @@
       ]
     }
   ],
-  "last_updated": "2025-07-31 00:20 (UTC)"
+  "last_updated": "2025-08-01 00:23 (UTC)"
 }
