@@ -8,7 +8,8 @@ manual_content: true
 
 ## Machine Learning for Finance
 - Direct backpropagation for dynamic portfolio optimization
+- Market making with reinforcement learning
 
-## Large Language Model
-- Character-level Language Model
+## Physical perspective of machine learning
+- Energy-based models
 
