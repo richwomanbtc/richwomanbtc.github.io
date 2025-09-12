@@ -63,6 +63,7 @@ jobs:
             git checkout page || git checkout -b page --track origin/page
             git pull origin page
             
+
             # mainブランチの内容を反映（コンフリクトはmainの内容を優先）
             git checkout main -- .
             
@@ -70,4 +71,5 @@ jobs:
             git add -A
             git diff --staged --quiet || git commit -m "Deploy updated site content (automated)"
             git push origin page
+
           fi

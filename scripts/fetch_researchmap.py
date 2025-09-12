@@ -5,7 +5,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -240,12 +240,12 @@ def generate_profile_markdown(data):
                 # 期間
                 period = ""
                 if "from_date" in exp and exp["from_date"]:
-                    period += exp["from_date"]
+                    period += exp["from_date"].replace("-", "/")
                 if "to_date" in exp and exp["to_date"]:
                     if exp["to_date"] == "9999":
                         period += " - Present"
                     else:
-                        period += f" - {exp['to_date']}"
+                        period += f" - {exp['to_date'].replace('-', '/')}"
 
                 # 役職も英語で
                 position = ""
