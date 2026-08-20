@@ -1,75 +1,79 @@
-name: Update Research Data
+name: Update researchmap data
 
 on:
   schedule:
-    - cron: "0 0 * * 0" # 日曜日午前0時に実行
-  workflow_dispatch: # 手動実行トリガー
-  push:
-    branches:
-      - main # mainブランチにプッシュされた時に実行
+    # Sundays at 09:17 JST. Avoid the heavily loaded top of the UTC hour.
+    - cron: "17 0 * * 0"
+  workflow_dispatch:
+
+concurrency:
+  group: researchmap-site-deployment
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
-  update:
+  update-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # リポジトリへのwrite権限を明示的に付与
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Check out the default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 0 # 完全なヒストリーを取得
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: "3.9"
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.4.0
+      - name: Install the project
+        run: python -m pip install --disable-pip-version-check -e ".[dev]"
 
-      - name: Regenerate poetry.lock
-        run: poetry lock
+      - name: Generate researchmap content
+        id: researchmap_sync
+        continue-on-error: true
+        run: python -m researchmap_site
 
-      - name: Install dependencies
-        run: poetry install --no-dev # 開発依存関係を除外
+      - name: Validate the generated site
+        run: make check
 
-      - name: Update research data
-        run: poetry run python scripts/fetch_researchmap.py
-
-      - name: Deploy to page branch
+      - name: Commit generated content to main
+        if: steps.researchmap_sync.outcome == 'success'
         run: |
-          # Git設定
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          # mainブランチの内容を一時保存
-          git stash
-
-          # pageブランチが存在するか確認
-          git fetch origin
-
-          if ! git ls-remote --heads origin page | grep page; then
-            # pageブランチが存在しない場合は新規作成
-            git checkout -b page
-            git stash pop || true
-            git add .
-            git commit -m "Initial deployment to page branch"
-            git push -u origin page
+          set -euo pipefail
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add -- _auto_contents
+          if git diff --cached --quiet; then
+            echo "researchmap content is already current"
           else
-            # pageブランチが既に存在する場合はそちらをベースに更新
-            git checkout page || git checkout -b page --track origin/page
-            git pull origin page
-            
-
-            # mainブランチの内容を反映（コンフリクトはmainの内容を優先）
-            git checkout main -- .
-            
-            # 変更を確認してコミット
-            git add -A
-            git diff --staged --quiet || git commit -m "Deploy updated site content (automated)"
-            git push origin page
-
+            git commit -m "Update researchmap content"
+            git push origin HEAD:main
           fi
+
+      - name: Record a heartbeat when researchmap is unavailable
+        if: steps.researchmap_sync.outcome == 'failure'
+        run: |
+          set -euo pipefail
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git commit --allow-empty -m "Record failed researchmap sync"
+          git push origin HEAD:main
+
+      - name: Deploy the tracked snapshot to the page branch
+        run: |
+          set -euo pipefail
+          cp scripts/deploy_page.sh "${RUNNER_TEMP}/deploy_page.sh"
+          bash "${RUNNER_TEMP}/deploy_page.sh"
+
+      - name: Report an upstream synchronization failure
+        if: steps.researchmap_sync.outcome == 'failure'
+        run: |
+          echo "::error::researchmap could not be reached. Existing generated content was preserved and deployed."
+          exit 1

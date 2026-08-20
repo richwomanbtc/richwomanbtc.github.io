@@ -1,225 +1,157 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // 現在の年を設定
-  document.getElementById("current-year").textContent =
-    new Date().getFullYear();
+"use strict";
 
-  // サイドバーのアクティブリンク設定
-  setupSidebar();
-
-  // マークダウンコンテンツの読み込み
-  loadMarkdownContents();
+document.addEventListener("DOMContentLoaded", () => {
+  setCurrentYear();
+  setupMenu();
+  setupNavigation();
+  void loadPageContent();
 });
 
-function setupSidebar() {
-  // スクロール時にアクティブなセクションを更新
-  window.addEventListener("scroll", updateActiveSection);
-
-  // サイドバーリンクのクリックイベント
-  const sidebarLinks = document.querySelectorAll(".sidebar a");
-  sidebarLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 40,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
-}
-
-function updateActiveSection() {
-  const sections = document.querySelectorAll("section");
-  const scrollPosition = window.scrollY + 100;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute("id");
-
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition < sectionTop + sectionHeight
-    ) {
-      // 現在のアクティブリンクを削除
-      document.querySelectorAll(".sidebar a").forEach((link) => {
-        link.classList.remove("active");
-      });
-
-      // 新しいアクティブリンクを設定
-      const activeLink = document.querySelector(
-        `.sidebar a[href="#${sectionId}"]`
-      );
-      if (activeLink) {
-        activeLink.classList.add("active");
-      }
-    }
-  });
-}
-
-async function loadMarkdownContents() {
-  try {
-    console.log("Loading markdown contents...");
-
-    // メタデータの読み込み
-    const metadataResponse = await fetch("_auto_contents/metadata.yml");
-    console.log("Metadata response:", metadataResponse);
-    if (metadataResponse.ok) {
-      const metadata = await metadataResponse.text();
-
-      // YAMLパース（簡易実装）
-      const lastUpdatedMatch = metadata.match(/last_updated:\s*(.*)/);
-      if (lastUpdatedMatch && lastUpdatedMatch[1]) {
-        document.getElementById("last-updated").textContent =
-          lastUpdatedMatch[1].trim();
-      }
-    }
-
-    // 各コンテンツセクションを読み込む
-    const contentElements = document.querySelectorAll(
-      ".markdown-content[data-source]"
-    );
-
-    for (const element of contentElements) {
-      const sourcePath = element.getAttribute("data-source");
-      await loadMarkdownFromSource(element, sourcePath);
-    }
-  } catch (error) {
-    console.error("コンテンツ読み込みエラー:", error);
-    document.querySelectorAll(".loading").forEach((el) => {
-      el.textContent = "データの読み込みに失敗しました。";
-    });
+function setCurrentYear() {
+  const year = document.getElementById("current-year");
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
   }
 }
 
-async function loadMarkdownFromSource(element, sourcePath) {
+function setupMenu() {
+  const button = document.querySelector(".menu-toggle");
+  const navigation = document.getElementById("site-navigation");
+  if (!button || !navigation) return;
+
+  const closeMenu = () => {
+    navigation.classList.remove("is-open");
+    button.setAttribute("aria-expanded", "false");
+  };
+
+  button.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 801px)").matches) {
+      closeMenu();
+    }
+  });
+}
+
+function setupNavigation() {
+  const links = [...document.querySelectorAll(".sidebar a[href^='#']")];
+  if (!links.length) return;
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const id = link.getAttribute("href")?.slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#${id}`);
+    });
+  });
+
+  const sections = [...document.querySelectorAll("main section")];
+  const updateActiveLink = () => {
+    const visible = sections
+      .filter((section) => !section.hidden)
+      .map((section) => ({
+        id: section.id,
+        distance: Math.abs(section.getBoundingClientRect().top - 80),
+        aboveFold: section.getBoundingClientRect().top <= 160,
+      }))
+      .filter((section) => section.aboveFold)
+      .sort((left, right) => left.distance - right.distance)[0];
+
+    links.forEach((link) => {
+      link.classList.toggle(
+        "active",
+        Boolean(visible && link.getAttribute("href") === `#${visible.id}`)
+      );
+    });
+  };
+
+  let framePending = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (framePending) return;
+      framePending = true;
+      window.requestAnimationFrame(() => {
+        updateActiveLink();
+        framePending = false;
+      });
+    },
+    { passive: true }
+  );
+  updateActiveLink();
+}
+
+async function loadPageContent() {
+  const containers = [...document.querySelectorAll("[data-source]")];
+  await Promise.all(containers.map(loadMarkdown));
+  await loadMetadata();
+}
+
+async function loadMarkdown(container) {
+  const source = container.dataset.source;
+  if (!source) return;
+
   try {
-    // パスの先頭にスラッシュを追加して絶対パスに変換
-    const absolutePath = sourcePath.startsWith("/")
-      ? sourcePath
-      : `/${sourcePath}`;
-    const response = await fetch(absolutePath);
+    const response = await fetch(new URL(source, document.baseURI), {
+      cache: "no-cache",
+    });
     if (!response.ok) {
-      // ファイルが存在しない場合はセクションを非表示にする
-      const sectionElement = element.closest("section");
-      if (sectionElement) {
-        sectionElement.style.display = "none";
-
-        // サイドバーのリンクも非表示にする
-        const sectionId = sectionElement.id;
-        const sidebarLink = document.querySelector(
-          `.sidebar a[href="#${sectionId}"]`
-        );
-        if (sidebarLink) {
-          sidebarLink.parentElement.style.display = "none";
-        }
+      if (response.status === 404 && container.closest("[data-optional]")) {
+        hideSection(container);
+        return;
       }
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const html = (await response.text()).trim();
+    if (!html) {
+      hideSection(container);
       return;
     }
-
-    const markdownText = await response.text();
-
-    // マークダウンが空の場合もセクションを非表示にする
-    if (!markdownText.trim() || markdownText.trim() === "") {
-      const sectionElement = element.closest("section");
-      if (sectionElement) {
-        sectionElement.style.display = "none";
-
-        // サイドバーのリンクも非表示にする
-        const sectionId = sectionElement.id;
-        const sidebarLink = document.querySelector(
-          `.sidebar a[href="#${sectionId}"]`
-        );
-        if (sidebarLink) {
-          sidebarLink.parentElement.style.display = "none";
-        }
-      }
-      return;
-    }
-
-    // Front Matter（YAML）を削除
-    const content = removeFrontMatter(markdownText);
-
-    // マークダウンをHTMLに変換
-    element.innerHTML = marked.parse(content);
-
-    // プロフィール写真の挿入（プロフィールセクションの場合のみ）
-    if (element.id === "profile-content") {
-      insertProfileImage();
-    }
+    container.innerHTML = html;
   } catch (error) {
-    console.error(`${absolutePath}読み込みエラー:`, error);
-    // エラーの場合もセクションを非表示にする
-    const sectionElement = element.closest("section");
-    if (sectionElement) {
-      sectionElement.style.display = "none";
-
-      // サイドバーのリンクも非表示にする
-      const sectionId = sectionElement.id;
-      const sidebarLink = document.querySelector(
-        `.sidebar a[href="#${sectionId}"]`
-      );
-      if (sidebarLink) {
-        sidebarLink.parentElement.style.display = "none";
-      }
-    }
+    console.error(`Could not load ${source}:`, error);
+    container.innerHTML = '<p class="load-error">Content could not be loaded.</p>';
   }
 }
 
-function removeFrontMatter(markdown) {
-  // Front Matter（---で囲まれた部分）を削除する
-  return markdown.replace(/^---[\s\S]*?---\n/, "");
+function hideSection(container) {
+  const section = container.closest("section");
+  if (!section) return;
+  section.hidden = true;
+  const link = document.querySelector(`.sidebar a[href="#${section.id}"]`);
+  const listItem = link?.closest("li");
+  if (listItem) {
+    listItem.hidden = true;
+  }
 }
 
-// Markdownコンテンツの読み込みと変換
-function loadMarkdownContent() {
-  document.querySelectorAll(".markdown-content").forEach((element) => {
-    const sourceFile = element.getAttribute("data-source");
-    fetch(sourceFile)
-      .then((response) => response.text())
-      .then((text) => {
-        // タイトル行を除外する処理（オプション）
-        const contentWithoutTitle = text.replace(/^# .*$/m, "");
-        element.innerHTML = marked.parse(contentWithoutTitle);
-      })
-      .catch((error) => {
-        console.error("Markdown loading error:", error);
-        element.innerHTML = "<p>コンテンツの読み込みに失敗しました。</p>";
-      });
-  });
-}
+async function loadMetadata() {
+  const display = document.getElementById("last-updated");
+  if (!display) return;
 
-// プロフィール写真を挿入する関数
-function insertProfileImage() {
-  const profileContent = document.getElementById("profile-content");
-  if (!profileContent) return;
-
-  // プロフィール情報（<h2>より前の内容）を取得
-  const firstH2Index = profileContent.innerHTML.indexOf("<h2");
-
-  if (firstH2Index > 0) {
-    // プロフィール情報とセクション（CareerとEducation）を分離
-    const profileInfo = profileContent.innerHTML.slice(0, firstH2Index);
-    const sections = profileContent.innerHTML.slice(firstH2Index);
-
-    // 新しいレイアウトを構築
-    const imageHTML = `
-      <div class="profile-with-image">
-        <div class="profile-info">
-          ${profileInfo}
-        </div>
-        <div class="profile-image">
-          <img src="assets/images/profile.jpg" alt="Kenji Kubo" />
-        </div>
-        <div class="clear"></div>
-      </div>
-      ${sections}
-    `;
-
-    profileContent.innerHTML = imageHTML;
+  try {
+    const response = await fetch(
+      new URL("_auto_contents/metadata.yml", document.baseURI),
+      { cache: "no-cache" }
+    );
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const metadata = await response.text();
+    const match = metadata.match(/^last_updated:\s*(.+)$/m);
+    if (match) {
+      display.textContent = match[1].trim();
+    }
+  } catch (error) {
+    console.error("Could not load synchronization metadata:", error);
   }
 }
