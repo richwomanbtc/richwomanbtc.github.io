@@ -1,0 +1,21 @@
+[researchmap]
+permalink = "kenjikun"
+base_url = "https://api.researchmap.jp"
+
+[profile]
+email = "kenji.kubo [at] weblab.t.u-tokyo.ac.jp"
+
+[[profile.social_links]]
+label = "X"
+url = "https://x.com/richwomanbtc"
+icon = "fa-brands fa-x-twitter"
+
+[[profile.social_links]]
+label = "YouTube"
+url = "https://www.youtube.com/@richwomanbtc4675"
+icon = "fa-brands fa-youtube"
+
+[[profile.social_links]]
+label = "GitHub"
+url = "https://github.com/richwomanbtc"
+icon = "fa-brands fa-github"

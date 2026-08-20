@@ -1,18 +1,37 @@
-[tool.poetry]
-name = "researcher-website"
-version = "0.1.0"
-description = "Personal researcher website"
-authors = ["Your Name <your.email@example.com>"]
+[project]
+name = "researchmap-site"
+version = "1.0.0"
+description = "Generate a static researcher website from the public researchmap API"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "markdown>=3.8,<4",
+  "requests>=2.32,<3",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-requests = "^2.28.1"
-# beautifulsoup4は必要ない場合は削除
-# pytest は dev-dependencies に移動
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.12,<1",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.0.0"
+[project.scripts]
+researchmap-sync = "researchmap_site.cli:main"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["researchmap_site*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-config --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
