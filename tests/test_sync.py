@@ -83,6 +83,31 @@ def test_failed_fetch_preserves_the_previous_tree(tmp_path: Path) -> None:
     assert old_file.read_text(encoding="utf-8") == "old content"
 
 
+def test_publication_details_are_nested_under_their_title(tmp_path: Path) -> None:
+    researcher = payload()
+    researcher["@graph"] = [
+        {
+            "@type": "published_papers",
+            "items": [
+                {
+                    "paper_title": {"en": "Nested publication"},
+                    "authors": {"en": [{"name": "Alice"}, {"name": "Bob"}]},
+                    "publication_name": {"en": "Example Journal"},
+                    "publication_date": "2026-08",
+                }
+            ],
+        }
+    ]
+    output = tmp_path / "_auto_contents"
+
+    synchronize(CONFIG, FakeClient(researcher), output)
+
+    papers = (output / "papers.html").read_text(encoding="utf-8")
+    assert papers.count("<ul>") == 2
+    assert "<li><strong>Nested publication</strong><ul>" in papers
+    assert "<li><strong>Authors:</strong> Alice, Bob</li>" in papers
+
+
 def test_manual_content_cannot_replace_generated_sections(tmp_path: Path) -> None:
     manual = tmp_path / "_contents"
     manual.mkdir()
