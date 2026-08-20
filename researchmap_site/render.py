@@ -29,6 +29,9 @@ AFFILIATION_ALIASES = {
     "株式会社メルカリ": "Mercari Inc.",
     "大和証券株式会社": "Daiwa Securities Co., Ltd.",
 }
+RESEARCH_FIELD_ALIASES = {
+    "Money and finance": "Finance",
+}
 MARKDOWN_SPECIAL = re.compile(r"([\\`*_{}\[\]<>#|])")
 
 
@@ -134,7 +137,9 @@ def _sort_by_date(items: Iterable[dict[str, Any]], *keys: str) -> list[dict[str,
 
 
 def _details(lines: list[str]) -> list[str]:
-    return [f"  - {line}" for line in lines if line]
+    # Python-Markdown requires four spaces for a nested list. Keeping details
+    # under their title also lets the shared CSS treat each record as one item.
+    return [f"    - {line}" for line in lines if line]
 
 
 def render_profile(payload: Mapping[str, Any], config: ProfileConfig) -> str:
@@ -215,10 +220,10 @@ def render_research_areas(payload: Mapping[str, Any]) -> str:
     for item in _section_items(payload, "research_areas"):
         discipline = _first_text(item, "discipline")
         field = _first_text(item, "research_field")
-        if discipline and field:
-            lines.append(f"- **{_md(discipline)}:** {_md(field)}")
-        elif discipline or field:
-            lines.append(f"- {_md(discipline or field)}")
+        field = RESEARCH_FIELD_ALIASES.get(field, field)
+        area = field or discipline
+        if area:
+            lines.append(f"- {_md(area)}")
     return "\n".join(lines).strip()
 
 

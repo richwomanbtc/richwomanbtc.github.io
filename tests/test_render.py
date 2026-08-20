@@ -13,7 +13,11 @@ def sample_payload() -> dict[str, object]:
                     {
                         "discipline": {"en": "Information science"},
                         "research_field": {"en": "Machine learning"},
-                    }
+                    },
+                    {
+                        "discipline": {"en": "Humanities & social sciences"},
+                        "research_field": {"en": "Money and finance"},
+                    },
                 ],
             },
             {
@@ -77,8 +81,12 @@ def test_render_all_normalizes_sections_and_escapes_api_text() -> None:
 
     assert "Ph.D. in Science" in rendered["profile.md"]
     assert "2025-04 – Present" in rendered["profile.md"]
-    assert "Information science" in rendered["research_areas.md"]
+    assert "- Machine learning" in rendered["research_areas.md"]
+    assert "- Finance" in rendered["research_areas.md"]
+    assert "Information science" not in rendered["research_areas.md"]
+    assert "Money and finance" not in rendered["research_areas.md"]
     assert "Alice, Bob" in rendered["papers.md"]
+    assert "    - **Authors:** Alice, Bob" in rendered["papers.md"]
     assert "アリス" not in rendered["papers.md"]
     assert "&lt;script&gt;" in rendered["papers.md"]
     assert "Example Society" in rendered["awards.md"]
