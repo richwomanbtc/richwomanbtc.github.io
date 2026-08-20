@@ -8,5 +8,5 @@ manual_content: true
 - Direct backpropagation for dynamic portfolio optimization
 - Market making with reinforcement learning
 
-## Physical perspective of machine learning
+## Physical Perspectives on Machine Learning
 - Energy-based models

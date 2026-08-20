@@ -16,7 +16,7 @@ class ConfigError(ValueError):
 class SocialLink:
     label: str
     url: str
-    icon: str
+    mark: str
 
 
 @dataclass(frozen=True)
@@ -80,7 +80,7 @@ def load_config(path: str | Path) -> SiteConfig:
             SocialLink(
                 label=_required_string(item, "label", section),
                 url=_https_url(item, "url", section),
-                icon=_required_string(item, "icon", section),
+                mark=_required_string(item, "mark", section),
             )
         )
 

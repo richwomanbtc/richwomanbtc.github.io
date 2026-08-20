@@ -74,21 +74,19 @@ def sample_payload() -> dict[str, object]:
 def test_render_all_normalizes_sections_and_escapes_api_text() -> None:
     profile = ProfileConfig(
         email="person [at] example.test",
-        social_links=(SocialLink("GitHub", "https://github.com/example", "fa-brands fa-github"),),
+        social_links=(SocialLink("GitHub", "https://github.com/example", "GH"),),
     )
 
     rendered = render_all(sample_payload(), profile)
 
     assert "Ph.D. in Science" in rendered["profile.md"]
     assert "2025-04 – Present" in rendered["profile.md"]
-    assert "- Machine learning" in rendered["research_areas.md"]
-    assert "- Finance" in rendered["research_areas.md"]
-    assert "Information science" not in rendered["research_areas.md"]
-    assert "Money and finance" not in rendered["research_areas.md"]
+    assert "research_areas.md" not in rendered
     assert "Alice, Bob" in rendered["papers.md"]
     assert "    - **Authors:** Alice, Bob" in rendered["papers.md"]
     assert "アリス" not in rendered["papers.md"]
     assert "&lt;script&gt;" in rendered["papers.md"]
+    assert 'aria-hidden="true"' in rendered["profile.md"]
     assert "Example Society" in rendered["awards.md"]
     assert "books.md" not in rendered
     assert "projects.md" not in rendered

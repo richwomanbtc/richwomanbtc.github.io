@@ -29,9 +29,6 @@ AFFILIATION_ALIASES = {
     "株式会社メルカリ": "Mercari Inc.",
     "大和証券株式会社": "Daiwa Securities Co., Ltd.",
 }
-RESEARCH_FIELD_ALIASES = {
-    "Money and finance": "Finance",
-}
 MARKDOWN_SPECIAL = re.compile(r"([\\`*_{}\[\]<>#|])")
 
 
@@ -162,10 +159,11 @@ def render_profile(payload: Mapping[str, Any], config: ProfileConfig) -> str:
         for link in config.social_links:
             url = html_escape(link.url, quote=True)
             label = html_escape(link.label, quote=True)
-            icon = html_escape(link.icon, quote=True)
+            mark = html_escape(link.mark)
             lines.append(
                 f'  <a href="{url}" target="_blank" rel="noopener noreferrer" '
-                f'aria-label="{label}" title="{label}"><i class="{icon}"></i></a>'
+                f'aria-label="{label}" title="{label}"><span aria-hidden="true">'
+                f"{mark}</span></a>"
             )
         lines.extend(("</div>", ""))
 
@@ -213,18 +211,6 @@ def render_profile(payload: Mapping[str, Any], config: ProfileConfig) -> str:
         lines.append("")
 
     return "\n".join(lines).strip() + "\n"
-
-
-def render_research_areas(payload: Mapping[str, Any]) -> str:
-    lines: list[str] = []
-    for item in _section_items(payload, "research_areas"):
-        discipline = _first_text(item, "discipline")
-        field = _first_text(item, "research_field")
-        field = RESEARCH_FIELD_ALIASES.get(field, field)
-        area = field or discipline
-        if area:
-            lines.append(f"- {_md(area)}")
-    return "\n".join(lines).strip()
 
 
 def _doi(item: Mapping[str, Any]) -> str:
@@ -386,7 +372,6 @@ def render_all(payload: Mapping[str, Any], profile_config: ProfileConfig) -> dic
 
     candidates = {
         "profile.md": render_profile(payload, profile_config),
-        "research_areas.md": render_research_areas(payload),
         "papers.md": render_papers(payload),
         "books.md": render_books(payload),
         "presentations.md": render_presentations(payload),
