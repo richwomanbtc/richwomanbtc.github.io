@@ -14,18 +14,28 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="assets/images/site.webmanifest">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
     <script defer src="assets/js/main.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <header class="site-header">
       <div class="container header-content">
-        <div>
+        <div class="hero-copy">
+          <p class="eyebrow">Machine Learning · Quantitative Finance · Quantum Computing</p>
           <h1>Kenji Kubo</h1>
-          <p class="subtitle">Researcher</p>
+          <p class="subtitle">
+            Researching computational methods for finance and physical systems.
+          </p>
+        </div>
+        <div class="hero-portrait">
+          <span class="hero-orbit" aria-hidden="true"></span>
+          <img
+            src="assets/images/profile.jpg"
+            alt="Portrait of Kenji Kubo"
+            width="200"
+            height="200"
+          >
         </div>
         <button
           class="menu-toggle"
@@ -34,17 +44,21 @@
           aria-expanded="false"
         >
           <span class="sr-only">Toggle navigation</span>
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </button>
       </div>
     </header>
 
-    <main class="container page-layout">
+    <main id="main-content" class="container page-layout" tabindex="-1">
       <nav id="site-navigation" class="sidebar" aria-label="Page sections">
+        <p class="nav-label">On this page</p>
         <ul>
           <li><a href="#profile">Profile</a></li>
           <li><a href="#research">Research</a></li>
-          <li><a href="#research-areas">Research Areas</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#books">Books</a></li>
           <li><a href="#presentations">Presentations</a></li>
@@ -60,78 +74,85 @@
 
         <section id="profile">
           <h2>Profile</h2>
-          <img
-            class="profile-photo"
-            src="assets/images/profile.jpg"
-            alt="Kenji Kubo"
-            width="200"
-            height="200"
-          >
+          <p class="section-lead">Career, education, and ways to connect.</p>
           <div
             id="profile-content"
             class="markdown-content"
             data-source="_auto_contents/profile.html"
+            aria-busy="true"
           >
-            <p class="loading">Loading profile…</p>
+            <p class="loading" role="status">Loading profile…</p>
           </div>
         </section>
 
         <section id="research">
           <h2>Research</h2>
+          <p class="section-lead">Current themes and ongoing research interests.</p>
           <div
             id="research-content"
             class="markdown-content"
             data-source="_auto_contents/research.html"
+            aria-busy="true"
           >
-            <p class="loading">Loading research summary…</p>
-          </div>
-        </section>
-
-        <section id="research-areas" data-optional>
-          <h2>Research Areas</h2>
-          <div
-            class="markdown-content"
-            data-source="_auto_contents/research_areas.html"
-          >
-            <p class="loading">Loading research areas…</p>
+            <p class="loading" role="status">Loading research summary…</p>
           </div>
         </section>
 
         <section id="publications" data-optional>
           <h2>Publications</h2>
-          <div class="markdown-content" data-source="_auto_contents/papers.html">
-            <p class="loading">Loading publications…</p>
+          <p class="section-lead">Peer-reviewed papers and doctoral work.</p>
+          <div
+            class="markdown-content"
+            data-source="_auto_contents/papers.html"
+            aria-busy="true"
+          >
+            <p class="loading" role="status">Loading publications…</p>
           </div>
         </section>
 
         <section id="books" data-optional>
           <h2>Books</h2>
-          <div class="markdown-content" data-source="_auto_contents/books.html">
-            <p class="loading">Loading books…</p>
+          <div
+            class="markdown-content"
+            data-source="_auto_contents/books.html"
+            aria-busy="true"
+          >
+            <p class="loading" role="status">Loading books…</p>
           </div>
         </section>
 
         <section id="presentations" data-optional>
           <h2>Presentations</h2>
+          <p class="section-lead">Conference talks and technical presentations.</p>
           <div
             class="markdown-content"
             data-source="_auto_contents/presentations.html"
+            aria-busy="true"
           >
-            <p class="loading">Loading presentations…</p>
+            <p class="loading" role="status">Loading presentations…</p>
           </div>
         </section>
 
         <section id="projects" data-optional>
           <h2>Research Projects</h2>
-          <div class="markdown-content" data-source="_auto_contents/projects.html">
-            <p class="loading">Loading projects…</p>
+          <div
+            class="markdown-content"
+            data-source="_auto_contents/projects.html"
+            aria-busy="true"
+          >
+            <p class="loading" role="status">Loading projects…</p>
           </div>
         </section>
 
         <section id="awards" data-optional>
           <h2>Awards</h2>
-          <div class="markdown-content" data-source="_auto_contents/awards.html">
-            <p class="loading">Loading awards…</p>
+          <p class="section-lead">Selected honors and recognitions.</p>
+          <div
+            class="markdown-content"
+            data-source="_auto_contents/awards.html"
+            aria-busy="true"
+          >
+            <p class="loading" role="status">Loading awards…</p>
           </div>
         </section>
 

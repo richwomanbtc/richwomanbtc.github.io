@@ -17,6 +17,7 @@ def test_repository_config_is_valid() -> None:
         "YouTube",
         "GitHub",
     }
+    assert {link.mark for link in config.profile.social_links} == {"X", "▶", "GH"}
 
 
 def test_config_requires_an_https_api(tmp_path: Path) -> None:
