@@ -19,9 +19,12 @@ function setupMenu() {
   const navigation = document.getElementById("site-navigation");
   if (!button || !navigation) return;
 
-  const closeMenu = () => {
+  const closeMenu = ({ returnFocus = false } = {}) => {
     navigation.classList.remove("is-open");
     button.setAttribute("aria-expanded", "false");
+    if (returnFocus && window.matchMedia("(max-width: 800px)").matches) {
+      button.focus({ preventScroll: true });
+    }
   };
 
   button.addEventListener("click", () => {
@@ -30,7 +33,13 @@ function setupMenu() {
   });
 
   navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => closeMenu({ returnFocus: true }));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navigation.classList.contains("is-open")) {
+      closeMenu({ returnFocus: true });
+    }
   });
 
   window.addEventListener("resize", () => {
@@ -50,7 +59,10 @@ function setupNavigation() {
       const target = id ? document.getElementById(id) : null;
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth";
+      target.scrollIntoView({ behavior, block: "start" });
       window.history.replaceState(null, "", `#${id}`);
     });
   });
@@ -68,10 +80,15 @@ function setupNavigation() {
       .sort((left, right) => left.distance - right.distance)[0];
 
     links.forEach((link) => {
-      link.classList.toggle(
-        "active",
-        Boolean(visible && link.getAttribute("href") === `#${visible.id}`)
+      const isActive = Boolean(
+        visible && link.getAttribute("href") === `#${visible.id}`
       );
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   };
 
@@ -121,7 +138,10 @@ async function loadMarkdown(container) {
     container.innerHTML = html;
   } catch (error) {
     console.error(`Could not load ${source}:`, error);
-    container.innerHTML = '<p class="load-error">Content could not be loaded.</p>';
+    container.innerHTML =
+      '<p class="load-error" role="alert">Content could not be loaded.</p>';
+  } finally {
+    container.setAttribute("aria-busy", "false");
   }
 }
 
@@ -129,6 +149,7 @@ function hideSection(container) {
   const section = container.closest("section");
   if (!section) return;
   section.hidden = true;
+  container.setAttribute("aria-busy", "false");
   const link = document.querySelector(`.sidebar a[href="#${section.id}"]`);
   const listItem = link?.closest("li");
   if (listItem) {
