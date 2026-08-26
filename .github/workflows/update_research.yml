@@ -2,8 +2,8 @@ name: Update researchmap data
 
 on:
   schedule:
-    # Sundays at 09:17 JST. Avoid the heavily loaded top of the UTC hour.
-    - cron: "17 0 * * 0"
+    # Daily at 09:17 JST. Avoid the heavily loaded top of the UTC hour.
+    - cron: "17 0 * * *"
   workflow_dispatch:
 
 concurrency:
